@@ -1,0 +1,44 @@
+.logo {
+    max-height: 96px;
+    vertical-align: middle;
+    margin: 10px 0px;
+}
+
+.menu-icon {
+    max-height: 70px;
+    vertical-align: middle;
+    margin: 10px 0px;
+}
+
+.md-toolbar-tools.custom {
+    height: auto !important;
+    max-height: none !important;
+    margin: 5px 0px;
+}
+
+.md-menu-bar.custom md-menu button {
+    margin: 6px 0px;
+}
+
+.md-list.custom button {
+    text-align: left;
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .md-toolbar-tools.custom {
+        height: 150px !important;
+        margin: 15px 0px;
+    }
+}
+
+@media (max-width: 599px) {
+    .md-toolbar-tools.custom {
+        height: 150px !important;
+        margin: 10px 0px;
+    }
+    .md-headline {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: inherit;
+    }
+}

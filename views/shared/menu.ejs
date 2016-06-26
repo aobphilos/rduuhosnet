@@ -1,0 +1,95 @@
+<div layout="row" layout-align="end center" hide-sm hide-xs>
+    <md-menu-bar class="md-menu-bar custom">
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="หน้าหลัก ">
+                        หน้าหลัก
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+            </md-menu-context>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="เกี่ยวกับโครงการ ">
+                        เกี่ยวกับโครงการ
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+            </md-menu-context>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="ความรู้สำหรับ ประชาชน ">
+                        ความรู้สำหรับ ประชาชน
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+            </md-menu-context>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="ความรู้สำหรับ บุคลากร ทางการแพทย์ ">
+                        ความรู้สำหรับ บุคลากร ทางการแพทย์
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+            </md-menu-context>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="สำหรับคณะทำงาน UHOSNET ">
+                        สำหรับคณะทำงาน UHOSNET
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+            </md-menu-context>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="ติดต่อเรา ">
+                        ติดต่อเรา
+                    </button>
+            <md-menu-context>
+                <md-menu-item></md-menu-item>
+
+            </md-menu-context>
+        </md-menu>
+    </md-menu-bar>
+</div>
+
+<div layout="row" layout-align="end center" hide-gt-sm hide-xs>
+    <md-menu-bar class="md-menu custom">
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="หน้าหลัก ">
+                        หน้าหลัก
+                    </button>
+            <md-menu-content></md-menu-content>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="เกี่ยวกับโครงการ ">
+                        เกี่ยวกับโครงการ
+                    </button>
+            <md-menu-content></md-menu-content>
+        </md-menu>
+        <md-menu>
+            <button ng-click="$mdOpenMenu()" aria-label="ความรู้">
+                ความรู้
+            </button>
+            <md-menu-content>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.sampleAction('New Document', $event)">สำหรับประชาชน</md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.sampleAction('New Spreadsheet', $event)">สำหรับบุคลากร ทางการแพทย์</md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="สำหรับ UHOSNET">
+                        สำหรับ UHOSNET
+                    </button>
+            <md-menu-content></md-menu-content>
+        </md-menu>
+        <md-menu>
+            <button ng-click="doSomething() " aria-label="ติดต่อเรา ">
+                        ติดต่อเรา
+                    </button>
+            <md-menu-content></md-menu-content>
+        </md-menu>
+    </md-menu-bar>
+</div>
