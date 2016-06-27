@@ -1,7 +1,7 @@
 .logo {
     max-height: 96px;
     vertical-align: middle;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 
 .menu-icon {
@@ -13,7 +13,6 @@
 .md-toolbar-tools.custom {
     height: auto !important;
     max-height: none !important;
-    margin: 5px 0px;
 }
 
 .md-menu-bar.custom md-menu button {
@@ -24,17 +23,40 @@
     text-align: left;
 }
 
+.menu-layout {
+    background-color: rgba(175, 215, 175, 0.41);
+}
+
+.greeting-head {
+    color: #8d8b94;
+}
+
+.greeting-sub {
+    color: #2f1f7b;
+}
+
+.greeting-image {
+    vertical-align: middle;
+}
+
+.greeting-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: 320px;
+}
+
 @media (min-width: 600px) and (max-width: 959px) {
     .md-toolbar-tools.custom {
         height: 150px !important;
-        margin: 15px 0px;
+        margin: 0px 0px;
     }
 }
 
 @media (max-width: 599px) {
     .md-toolbar-tools.custom {
         height: 150px !important;
-        margin: 10px 0px;
+        margin: 5px 0px;
     }
     .md-headline {
         font-size: 16px;
