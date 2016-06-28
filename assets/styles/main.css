@@ -46,6 +46,10 @@
     max-height: 320px;
 }
 
+.divide-block {
+    height: 35px;
+}
+
 @media (min-width: 600px) and (max-width: 959px) {
     .md-toolbar-tools.custom {
         height: 150px !important;
