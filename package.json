@@ -31,10 +31,12 @@
     "angular": "^1.5.7",
     "angular-animate": "^1.5.7",
     "angular-aria": "^1.5.7",
+    "angular-google-gapi": "^1.0.0",
     "angular-material": "^1.1.0-rc.5",
     "angular-resource": "^1.5.7",
     "angular-route": "^1.5.7",
-    "jquery": "^2.2.2"
+    "jquery": "^2.2.2",
+    "owl.carousel": "^2.1.4"
   },
   "scripts": {
     "debug": "node debug app.js",

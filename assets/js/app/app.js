@@ -17,6 +17,8 @@
         .run([
             '$location',
             '$rootScope',
+            'GApi', 'GAuth',
+            'GData',
             RDURun
         ]);
 
@@ -26,7 +28,8 @@
         $resourceProvider,
         $httpProvider,
         $mdThemingProvider,
-        $mdIconProvider) {
+        $mdIconProvider
+    ) {
 
         // Route
         $routeProvider
@@ -59,7 +62,12 @@
 
     function RDURun(
         $location,
-        $rootScope) {
+        $rootScope,
+        GApi, GAuth,
+        GData
+    ) {
+
+        AuthenGoogle(GApi, GAuth, GData, $rootScope);
 
         $rootScope.$on('$routeChangeStart', routeChangeStart);
         $rootScope.$on('$routeChangeSuccess', routeChangeSuccess);
@@ -84,12 +92,7 @@
                             $location.path('/login');
                         } else {
 
-                            if (path != "/401") {
-                                if (!GroupContext.hasView(next.$$route.regexp)) {
-                                    event.preventDefault();
-                                    $location.path('/401');
-                                }
-                            }
+
 
                         }
 
@@ -106,6 +109,26 @@
             var isLoginPage = current.$$route.regexp.test('/login');
 
         }
+    }
+
+    function AuthenGoogle(GApi, GAuth, GData, $rootScope) {
+
+        $rootScope.gdata = GData;
+
+        var CLIENT = '792419785746-94spd1m00hvacioa102u0950ak22lr5r.apps.googleusercontent.com';
+        var SCOPE = [
+            'https://www.googleapis.com/auth/drive.metadata',
+            'https://www.googleapis.com/auth/drive.metadata.readonly',
+            'https://www.googleapis.com/auth/drive.photos.readonly',
+            'https://www.googleapis.com/auth/drive.readonly'
+        ];
+
+        GAuth.setClient(CLIENT);
+        GAuth.setScope(SCOPE.join(' ')); // default scope is only https://www.googleapis.com/auth/userinfo.email
+
+        GApi.load('drive', 'v3').then(function(resp) {
+            console.log('api: ' + resp.api + ', version: ' + resp.version + ' loaded');
+        });
     }
 
 }());

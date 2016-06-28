@@ -12,9 +12,9 @@
                     WELCOME TO <br />RATIONAL DRUG USE <br />HOSPITAL
                 </p>
 
-                <p class="md-subhead greeting-sub">
+                <span class="md-subhead greeting-sub">
                     "โรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล"
-                </p>
+                </span>
             </div>
             <div flex="50" class="greeting-image">
                 <img ng-src="/images/home/rdu-main.png" alt="RDU" />
@@ -22,31 +22,34 @@
         </section>
 
     </md-content>
+    <div class="divide-block"></div>
     <md-content>
         <section layout="row">
             <div flex-offset="5" flex="90" layout-align="center center">
-                <div class="owl-carousel">
+                <div class="owl-carousel owl-theme">
                     <div><img ng-src="/images/home/feed/feed1.jpg" alt="feed 1"></div>
-                    <div><img ng-src="/images/home/feed/feed2.jpg" alt="feed 1"></div>
-                    <div><img ng-src="/images/home/feed/feed3.jpg" alt="feed 1"></div>
+                    <div><img ng-src="/images/home/feed/feed2.jpg" alt="feed 2"></div>
+                    <div><img ng-src="/images/home/feed/feed3.jpg" alt="feed 3"></div>
                 </div>
             </div>
         </section>
     </md-content>
     <div class="divide-block"></div>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h3>
-        <span>ความรู้สู่ประชาชน</span>
-      </h3>
-        </div>
-    </md-toolbar>
+
+    <md-subheader>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>
+                <span>ความรู้สู่ประชาชน</span></h3>
+            </div>
+        </md-toolbar>
+    </md-subheader>
     <md-content flex layout-padding>
         <section layout="column" layout-gt-sm="row">
-            <div flex-offset="5" flex="90" flex-gt-sm="45">
+            <div flex-offset="5" flex="90" flex-gt-sm="35">
                 <p>
                     <h3> โครงการได้จัดทำคำแนะนำสำหรับการดูแลด้านยา เพื่อความปลอดภัยของผู้ป่วยกลุ่มพิเศษ 6 กลุ่ม ได้แก่</h3>
-                    <ol>
+                    <ol class="md-title">
                         <li>ผู้สูงอายุ</li>
                         <li>สตรีตั้งครรภ์</li>
                         <li>สตรีให้นมบุตร</li>
@@ -54,44 +57,87 @@
                         <li>ผู้ป่วยโรคตับ</li>
                         <li>ผู้ป่วยโรคไตเรื้อรัง</li>
                     </ol>
-                    <a ng-href="#link" alt="more">เพิ่มเติม &gt; &gt;</a>
+
                 </p>
+                <div flex-offset="5">
+                    <a ng-href="#link" alt="more">เพิ่มเติม &gt; &gt;</a>
+                </div>
             </div>
-            <div flex-offset="5" flex="90" flex-gt-sm="45">
+            <div class="divide-block"></div>
+            <div flex-offset="5" flex-offset-gt-sm="10" flex="90" flex-gt-sm="50">
                 <h3>สื่อมัลติมีเดีย</h3>
+
+                <div layout-xs="column" layout="row">
+                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                        <iframe width="85%" ng-src="https://www.youtube.com/embed/mm5uWG4SdtI?list=PLhREouoExlICK7Rrpg2dh4pkT82Jv-zt1" frameborder="1" allowfullscreen></iframe>
+                        <p>สภาวะปัจจุบันของระบบสุขภาพกับการใช้ยาของผู้ป่วย</p>
+                    </div>
+                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                        <iframe width="85%" src="https://www.youtube.com/embed/QhbDSeKM5Z0" frameborder="0" allowfullscreen></iframe>
+                        <p>การใช้ยาในโรคหวัด</p>
+                    </div>
+                </div>
+                <div layout-xs="column" layout="row">
+                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                        <iframe width="85%" src="https://www.youtube.com/embed/M3aEPkrHTm0?list=PLhREouoExlICK7Rrpg2dh4pkT82Jv-zt1" frameborder="0" allowfullscreen></iframe>
+                        <p>ปัญหาจากการใช้ยาที่มากเกินไป การใช้ยาซ้ำซ้อน หรือการใช้ยาหมดอายุ</p>
+                    </div>
+                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                        <iframe width="85%" src="https://www.youtube.com/embed/kMrV3s0TQJE" frameborder="0" allowfullscreen></iframe>
+                        <p>การใช้ยาในโรคท้องเสีย</p>
+                    </div>
+                </div>
+                <div flex-offset="5">
+                    <a ng-href="#link" alt="more">เพิ่มเติม &gt; &gt;</a>
+                </div>
             </div>
         </section>
     </md-content>
     <div class="divide-block"></div>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h3>
-        <span>ประมวลภาพกิจกรรม</span>
-      </h3>
-        </div>
-    </md-toolbar>
+    <md-subheader>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3><span>ประมวลภาพกิจกรรม</span></h3>
+            </div>
+        </md-toolbar>
+    </md-subheader>
     <md-content flex layout-padding>
         <section layout="column" layout-gt-sm="row">
             <div flex-offset="5" flex="90" flex-gt-sm="30">
-                A
+                <div id="authorize-div" style="display: none">
+                    <span>Authorize access to Drive API</span>
+                    <!--Button for the user to click to initiate auth sequence -->
+                    <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+                </div>
+                <pre id="output"></pre>
+
             </div>
+            <div class="divide-block"></div>
             <div flex-offset="5" flex="90" flex-gt-sm="30">
-                B
+                <img flex="90" ng-src="/images/home/feed/feed2.jpg" alt="feed 2" />
             </div>
-            <div flex-offset="5" flex="90" flex-gt-sm="30">
-                C
+            <div class="divide-block"></div>
+            <div flex-offset="5" flex="90" flex-gt-sm="30" layout="row" layout-align="center start">
+
+                <img hide-xs flex="20" flex-md="15" ng-src="/images/home/calendar.png" alt="calendar" />
+
+                <div flex-xs="90" flex="80" flex-md="85"> <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rduhos%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FBangkok"
+                        style="border-width:0" width="100%" height="315" frameborder="0" scrolling="no"></iframe>
+                </div>
             </div>
         </section>
     </md-content>
     <div class="divide-block"></div>
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <h3>
-        <span>จัดทำโดย</span>
-      </h3>
-        </div>
-    </md-toolbar>
+    <md-subheader>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3><span>จัดทำโดย</span></h3>
+            </div>
+        </md-toolbar>
+    </md-subheader>
     <md-content flex layout-padding>
-        <label>logo</label>
+
     </md-content>
 </div>
