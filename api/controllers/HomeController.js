@@ -6,7 +6,16 @@
  */
 
 module.exports = {
+
     index: function(req, res) {
         return res.view("home/index");
+    },
+
+    getDropboxFiles: function(req, res) {
+        var list = DropboxService.listFiles()
+            .then(function(result) {
+
+                return res.json(result);
+            });
     }
 };

@@ -103,23 +103,17 @@
     </md-subheader>
     <md-content flex layout-padding>
         <section layout="column" layout-gt-sm="row">
-            <div flex-offset="5" flex="90" flex-gt-sm="30">
-                <div id="authorize-div" style="display: none">
-                    <span>Authorize access to Drive API</span>
-                    <!--Button for the user to click to initiate auth sequence -->
-                    <button id="authorize-button" onclick="handleAuthClick(event)">
-        Authorize
-      </button>
+            <div flex-offset="5" flex="90" flex-gt-sm="50">
+                <div layout="column" layout-gt-xs="row">
+                    <a flex="100" flex-gt-sm="80" flex-gt-md="60" ng-if="ctrl.db.hasImage" ng-repeat="img in ctrl.db.files track by $index" ng-href="{{img.urlLink}}" target="_blank">
+                        <div class="event-image" style='background-image: url("{{img.urlShow}}");'></div>
+                    </a>
                 </div>
-                <pre id="output"></pre>
+                <a flex ng-if="ctrl.db.hasImage" ng-href="{{ctrl.db.seemore}}" target="_blank" alt="more">เพิ่มเติม &gt; &gt;</a>
 
             </div>
             <div class="divide-block"></div>
-            <div flex-offset="5" flex="90" flex-gt-sm="30">
-                <img flex="90" ng-src="/images/home/feed/feed2.jpg" alt="feed 2" />
-            </div>
-            <div class="divide-block"></div>
-            <div flex-offset="5" flex="90" flex-gt-sm="30" layout="row" layout-align="center start">
+            <div flex-offset-xs="0" flex-offset="5" flex="90" flex-gt-sm="30" layout="row" layout-align="center start">
 
                 <img hide-xs flex="20" flex-md="15" ng-src="/images/home/calendar.png" alt="calendar" />
 

@@ -6,12 +6,17 @@
         .controller('HomeCtrl', [
             '$rootScope',
             '$timeout',
-            'GApi',
+            'DBFileApi',
             HomeCtrl
         ]);
 
-    function HomeCtrl($rootScope, $timeout, GApi) {
+    function HomeCtrl($rootScope, $timeout, DBFileApi) {
         var vm = this;
+        vm.db = {
+            hasImage: false,
+            files: [],
+            seemore: '#events'
+        }
 
         init();
 
@@ -44,24 +49,29 @@
             });
         }
 
+        function getDropboxFiles() {
+            DBFileApi.get(null).$promise
+                .then(function(files) {
+                    if (files.length > 0) {
+                        vm.db.hasImage = true;
+                        angular.forEach(files,
+                            function(file) {
+                                if (!/seemore/ig.test(file.name)) {
+                                    vm.db.files.push(file);
+                                } else {
+                                    vm.db.seemore = file.urlLink;
+                                }
+                            })
+                    }
+                });
+        }
+
         function init() {
+
+            getDropboxFiles();
 
             angular.element(document).ready(function() {
                 $timeout(initCarousel, 100);
-
-                // GApi.execute('drive', 'files.list', {
-                //     spaces: 'photos',
-                //     key: 'AIzaSyC0kHtSun_7swR9mHNmn9bsshr4knXl8r8'
-                // }).then(function(resp) {
-                //     $scope.value = resp;
-                //     console.log('list: ', resp);
-                // }, function(err) {
-                //     console.log("error :(", err, ")");
-                // });
-
-                // $.get('https://www.googleapis.com/drive/v3/files?key=AIzaSyC0kHtSun_7swR9mHNmn9bsshr4knXl8r8', function(result) {
-                //     console.log(result);
-                // });
             });
 
         }

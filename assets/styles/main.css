@@ -50,7 +50,28 @@
     height: 35px;
 }
 
+.event-image {
+    margin: 0px 35px 15px 0px;
+    min-height: 280px;
+    min-width: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 2px solid #b5b5b5;
+}
+
+@media (min-width: 960px) and (max-width: 1280px) {
+    .event-image {
+        margin: 0px 30px 15px 0px;
+        min-height: 180px;
+    }
+}
+
 @media (min-width: 600px) and (max-width: 959px) {
+    .event-image {
+        margin: 0px 25px 15px 0px;
+        min-height: 180px;
+    }
     .md-toolbar-tools.custom {
         height: 150px !important;
         margin: 0px 0px;
@@ -58,6 +79,10 @@
 }
 
 @media (max-width: 599px) {
+    .event-image {
+        margin: 0px 20px 15px 0px;
+        min-height: 150px;
+    }
     .md-toolbar-tools.custom {
         height: 150px !important;
         margin: 5px 0px;

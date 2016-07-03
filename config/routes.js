@@ -32,7 +32,8 @@ module.exports.routes = {
      *                                                                          *
      ***************************************************************************/
 
-    '/': 'Homecontroller.index'
+    '/': 'Homecontroller.index',
+    'get /api/db/files': 'Homecontroller.getDropboxFiles',
 
     /***************************************************************************
      *                                                                          *
