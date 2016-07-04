@@ -1,7 +1,7 @@
 .logo {
-    max-height: 96px;
+    max-height: 84px;
     vertical-align: middle;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 .menu-icon {
@@ -73,18 +73,24 @@
         min-height: 180px;
     }
     .md-toolbar-tools.custom {
-        height: 150px !important;
+        height: 100px !important;
         margin: 0px 0px;
+    }
+    .logo {
+        max-height: 72px;
     }
 }
 
 @media (max-width: 599px) {
+    .divide-block {
+        height: 30px;
+    }
     .event-image {
         margin: 0px 20px 15px 0px;
         min-height: 150px;
     }
     .md-toolbar-tools.custom {
-        height: 150px !important;
+        height: 100px !important;
         margin: 5px 0px;
     }
     .md-headline {

@@ -42,14 +42,14 @@
 <body ng-cloak>
     <div layout="column" layout-fill ng-controller="LayoutCtrl as layout">
 
-        <md-toolbar>
+        <md-toolbar  >
             <div class="md-toolbar-tools custom">
                 <div flex-offset="5" flex="15" hide-xs layout-align="center center">
                     <img ng-src="/images/layout/logo.png" alt="RDU" class="logo">
                 </div>
                 <div flex-offset="5" flex="70" layout="column">
                     <span class="md-headline">โครงการส่งเสริมการใช้ยาอย่างสมเหตุผล</span>
-                    <span class="md-caption">โดย เครือข่ายโรงพยาบาลกลุ่มสถาบันแพทยศาสตร์แห่งประเทศไทย (UHOSNET)</span>
+                    <span class="md-caption" hide-xs>โดย เครือข่ายโรงพยาบาลกลุ่มสถาบันแพทยศาสตร์แห่งประเทศไทย (UHOSNET)</span>
                 </div>
                 <div flex="auto" show-xs hide-gt-xs layout-align="center center">
                     <md-button aria-label="left menu" ng-click="layout.openLeftMenu()" class="md-mini">
@@ -58,16 +58,13 @@
                 </div>
             </div>
         </md-toolbar>
-
         <%- partial( "shared/menu") %>
-
-            <md-content flex="100">
-                <%- partial ("shared/sidebar") %>
-                    <div flex>
-                        <%- body %>
-                    </div>
-            </md-content>
-
+        <md-content style="height: 100%">
+            <%- partial ("shared/sidebar") %>
+            <div flex>
+                <%- body %>
+            </div>
+        </md-content>
 
     </div>
 
@@ -134,6 +131,7 @@
     <script src="/js/app/controllers/home.controller.js"></script>
     <script src="/js/app/controllers/layout.controller.js"></script>
     <script src="/js/app/factories/dbfile.factory.js"></script>
+    <script src="/js/app/factories/state.factory.js"></script>
     <script src="/js/app/app.js"></script>
     <!--SCRIPTS END-->
 </body>

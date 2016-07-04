@@ -35,7 +35,6 @@
         </section>
     </md-content>
     <div class="divide-block"></div>
-
     <md-subheader>
         <md-toolbar>
             <div class="md-toolbar-tools">
@@ -127,11 +126,84 @@
     <md-subheader>
         <md-toolbar>
             <div class="md-toolbar-tools">
+                <h3><span>Link ที่เกี่ยวข้อง</span></h3>
+            </div>
+        </md-toolbar>
+    </md-subheader>
+    <md-content flex layout-padding>
+        <section layout="column" layout-gt-sm="row">
+
+            <div flex-offset="5" flex-offset-xs="10" flex="90" flex-sm="65" flex-gt-md="60" layout="row" layout-xs="column">
+                <div flex layout-align="start center" layout="row">
+                    <img flex="30" flex-xs="15" ng-src="/images/home/downloads.png" alt="download เอกสาร">
+                    <a href="#download" flex>
+                        <h3 flex-offset="5">download เอกสาร</h3>
+                    </a>
+                </div>
+                <div show-xs hide class="divide-block"></div>
+                <div flex-offset="5" flex-offset-xs="0" flex layout-align="start center" layout="row">
+                    <img flex="30" flex-xs="15" ng-src="/images/home/book.png" alt="RDU curriculum">
+                    <a href="#" flex>
+                        <h3 flex-offset="5">RDU curriculum</h3>
+                    </a>
+                </div>
+            </div>
+
+            <div flex-offset-xs="10" flex-offset="5" flex-offset-gt-md="0" flex="90" flex-sm="30" flex-gt-md="35" layout-align="start center" layout="row">
+
+                <ul>
+                    <li>
+                        <h4>เครือข่ายโรงพยาบาล</h4></li>
+                    <li>
+                        <h4>สำนักงานคณะกรรมการอาหารและยา</h4></li>
+                    <li>
+                        <h4>สถาบันวิจัยระบบสาธารณสุข</h4></li>
+                    <li>
+                        <h4>องค์การเภสัชกรรม</h4></li>
+                </ul>
+
+
+            </div>
+        </section>
+    </md-content>
+    <div class="divide-block"></div>
+    <md-subheader>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
                 <h3><span>จัดทำโดย</span></h3>
             </div>
         </md-toolbar>
     </md-subheader>
     <md-content flex layout-padding>
+        <section>
+            <div flex-offset="5" flex="90">
+                <md-grid-list md-cols="3" md-cols-sm="6" md-cols-md="9" md-cols-gt-md="12" md-row-height="1:1" md-gutter="10px">
+                    <md-grid-tile ng-repeat="logo in ctrl.logo.sponsors track by $index" md-colspan="1" md-rowspan="1">
+                        <img flex="90" ng-src="{{ctrl.logo.path+logo.image}}" alt="{{logo.name}}">
 
+                    </md-grid-tile>
+                </md-grid-list>
+            </div>
+        </section>
+    </md-content>
+    <div class="divide-block"></div>
+    <md-subheader>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3><span>สนับสนุนโดย</span></h3>
+            </div>
+        </md-toolbar>
+    </md-subheader>
+    <md-content flex layout-padding>
+        <section>
+            <div flex-offset="5" flex="90">
+                <md-grid-list md-cols="3" md-cols-sm="6" md-cols-md="9" md-cols-gt-md="12" md-row-height="1:1" md-gutter="10px">
+                    <md-grid-tile ng-repeat="logo in ctrl.logo.supports track by $index" md-colspan="1" md-rowspan="1">
+                        <img flex="90" ng-src="{{ctrl.logo.path+logo.image}}" alt="{{logo.name}}">
+
+                    </md-grid-tile>
+                </md-grid-list>
+            </div>
+        </section>
     </md-content>
 </div>
