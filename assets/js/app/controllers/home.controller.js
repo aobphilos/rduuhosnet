@@ -14,18 +14,6 @@
     function HomeCtrl($rootScope, $timeout, DBFileApi, StateApi) {
         var vm = this;
 
-        vm.db = {
-            hasImage: false,
-            files: [],
-            seemore: '#events'
-        };
-
-        vm.logo = {
-            path: '/images/home/logo/',
-            sponsors: StateApi.getSponsors(),
-            supports: StateApi.getSupports()
-        }
-
         init();
 
         function initCarousel() {
@@ -75,6 +63,18 @@
         }
 
         function init() {
+            
+            vm.db = {
+                hasImage: false,
+                files: [],
+                seemore: '#events'
+            };
+
+            vm.logo = {
+                path: '/images/home/logo/',
+                sponsors: StateApi.getSponsors(),
+                supports: StateApi.getSupports()
+            };
 
             getDropboxFiles();
 

@@ -19,8 +19,8 @@
 var cssFilesToInject = [
     'styles/**/*.css',
 
-    '!styles/**/main.css',
-    'styles/**/main.css'
+    '!styles/**/app/*.css',
+    'styles/**/app/*.css'
 ];
 
 

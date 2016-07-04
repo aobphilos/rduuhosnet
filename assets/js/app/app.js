@@ -37,6 +37,12 @@
                 templateUrl: '/js/app/templates/home/index.html',
                 caseInsensitiveMatch: true
             })
+            .when('/aboutus', {
+                controller: 'AboutUsCtrl',
+                controllerAs: 'ctrl',
+                templateUrl: '/js/app/templates/aboutus/index.html',
+                caseInsensitiveMatch: true
+            })
             .otherwise({
                 redirectTo: '/'
             });
