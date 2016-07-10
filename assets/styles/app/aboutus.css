@@ -3,15 +3,5 @@
 }
 
 p.md-body-2 {
-    white-space: normal;
-    word-break: normal;
-    word-wrap: break-word;
-    text-align: justify;
-    text-justify: inter-word;
-    text-indent: 45px;
     font-size: 16px;
-}
-
-p.md-subhead.right {
-    text-align: right;
 }

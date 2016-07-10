@@ -66,9 +66,7 @@
 
     function RDURun(
         $location,
-        $rootScope,
-        GApi, GAuth,
-        GData
+        $rootScope
     ) {
 
         $rootScope.$on('$routeChangeStart', routeChangeStart);
@@ -111,6 +109,7 @@
             var isLoginPage = current.$$route.regexp.test('/login');
 
         }
+
     }
 
 

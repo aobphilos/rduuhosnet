@@ -38,6 +38,7 @@
     "angular-resource": "^1.5.7",
     "angular-route": "^1.5.7",
     "jquery": "^2.2.2",
+    "material-design-icons": "^2.2.3",
     "owl.carousel": "^2.1.4"
   },
   "scripts": {
