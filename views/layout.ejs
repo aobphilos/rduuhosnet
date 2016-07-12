@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="rdu">
-  <head>
+
+<head>
     <title>RDUUHOSNET</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
@@ -31,13 +32,41 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/angular-material.css">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/owl.carousel.css">
+    <link rel="stylesheet" href="/styles/owl.theme.green.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <!--STYLES END-->
-  </head>
-
-  <body>
-    <%- body %>
+</head>
 
 
+<body ng-cloak>
+    <div layout="column" layout-fill ng-controller="LayoutCtrl as layout">
+
+        <md-toolbar  >
+            <div class="md-toolbar-tools custom">
+                <div flex-offset="5" flex="15" hide-xs layout-align="center center">
+                    <img ng-src="/images/layout/logo.png" alt="RDU" class="logo">
+                </div>
+                <div flex-offset="5" flex="70" layout="column">
+                    <span class="md-headline">โครงการส่งเสริมการใช้ยาอย่างสมเหตุผล</span>
+                    <span class="md-caption" hide-xs>โดย เครือข่ายโรงพยาบาลกลุ่มสถาบันแพทยศาสตร์แห่งประเทศไทย (UHOSNET)</span>
+                </div>
+                <div flex="auto" show-xs hide-gt-xs layout-align="center center">
+                    <md-button aria-label="left menu" ng-click="layout.openLeftMenu()" class="md-mini">
+                        <img ng-src="/images/layout/menu-icon-2.png" alt="menu" class="menu-icon">
+                    </md-button>
+                </div>
+            </div>
+        </md-toolbar>
+        <%- partial( "shared/menu") %>
+        <md-content style="height: 100%">
+            <%- partial ("shared/sidebar") %>
+            <div flex>
+                <%- body %>
+            </div>
+        </md-content>
+
+    </div>
 
     <!--
         Client-side Templates
@@ -94,11 +123,17 @@
     <script src="/js/dependencies/angular-aria.js"></script>
     <script src="/js/dependencies/angular-resource.js"></script>
     <script src="/js/dependencies/angular-route.js"></script>
+    <script src="/js/dependencies/jquery.js"></script>
+    <script src="/js/dependencies/owl.carousel.js"></script>
     <script src="/js/dependencies/angular-material.js"></script>
     <script src="/js/app/modules/core.module.js"></script>
     <script src="/js/app/modules/ui.module.js"></script>
     <script src="/js/app/controllers/home.controller.js"></script>
+    <script src="/js/app/controllers/layout.controller.js"></script>
+    <script src="/js/app/factories/dbfile.factory.js"></script>
+    <script src="/js/app/factories/state.factory.js"></script>
     <script src="/js/app/app.js"></script>
     <!--SCRIPTS END-->
-  </body>
+</body>
+
 </html>

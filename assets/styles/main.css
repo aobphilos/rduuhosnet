@@ -1,0 +1,101 @@
+.logo {
+    max-height: 84px;
+    vertical-align: middle;
+    margin: 10px 0px;
+}
+
+.menu-icon {
+    max-height: 70px;
+    vertical-align: middle;
+    margin: 10px 0px;
+}
+
+.md-toolbar-tools.custom {
+    height: auto !important;
+    max-height: none !important;
+}
+
+.md-menu-bar.custom md-menu button {
+    margin: 6px 0px;
+}
+
+.md-list.custom button {
+    text-align: left;
+}
+
+.menu-layout {
+    background-color: rgba(175, 215, 175, 0.41);
+}
+
+.greeting-head {
+    color: #8d8b94;
+}
+
+.greeting-sub {
+    color: #2f1f7b;
+}
+
+.greeting-image {
+    vertical-align: middle;
+}
+
+.greeting-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: 320px;
+}
+
+.divide-block {
+    height: 35px;
+}
+
+.event-image {
+    margin: 0px 35px 15px 0px;
+    min-height: 280px;
+    min-width: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 2px solid #b5b5b5;
+}
+
+@media (min-width: 960px) and (max-width: 1280px) {
+    .event-image {
+        margin: 0px 30px 15px 0px;
+        min-height: 180px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .event-image {
+        margin: 0px 25px 15px 0px;
+        min-height: 180px;
+    }
+    .md-toolbar-tools.custom {
+        height: 100px !important;
+        margin: 0px 0px;
+    }
+    .logo {
+        max-height: 72px;
+    }
+}
+
+@media (max-width: 599px) {
+    .divide-block {
+        height: 30px;
+    }
+    .event-image {
+        margin: 0px 20px 15px 0px;
+        min-height: 150px;
+    }
+    .md-toolbar-tools.custom {
+        height: 100px !important;
+        margin: 5px 0px;
+    }
+    .md-headline {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: inherit;
+    }
+}

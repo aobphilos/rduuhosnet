@@ -1,0 +1,43 @@
+[{
+    "name": "bu",
+    "image": "bu.png"
+}, {
+    "name": "cu",
+    "image": "cu.png"
+}, {
+    "name": "ku",
+    "image": "ku.png"
+}, {
+    "name": "mu",
+    "image": "mu.png"
+}, {
+    "name": "nu",
+    "image": "nu.png"
+}, {
+    "name": "ped",
+    "image": "ped.png"
+}, {
+    "name": "psu",
+    "image": "psu.png"
+}, {
+    "name": "raj",
+    "image": "raj.png"
+}, {
+    "name": "rama",
+    "image": "rama.png"
+}, {
+    "name": "si",
+    "image": "si.png"
+}, {
+    "name": "swu",
+    "image": "swu.png"
+}, {
+    "name": "tu",
+    "image": "tu.png"
+}, {
+    "name": "Uhosnet",
+    "image": "Uhosnet.png"
+}, {
+    "name": "wa",
+    "image": "wa.png"
+}]
