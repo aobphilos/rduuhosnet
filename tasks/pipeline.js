@@ -19,8 +19,8 @@
 var cssFilesToInject = [
     'styles/**/*.css',
 
-    '!styles/**/main.css',
-    'styles/**/main.css'
+    '!styles/**/app/*.css',
+    'styles/**/app/*.css'
 ];
 
 
@@ -28,7 +28,8 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-    // Load sails.io before everything else
+    // Load core libs before everything else
+    'js/dependencies/lodash.js',
     'js/dependencies/angular.js',
 
     // Dependencies like jQuery, or Angular are brought in here

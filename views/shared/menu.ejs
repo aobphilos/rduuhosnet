@@ -1,7 +1,7 @@
 <div layout="row" layout-align="end center" class="menu-layout" hide-sm hide-xs>
     <md-menu-bar class="md-menu-bar custom" >
         <md-menu>
-            <button ng-click="doSomething() " aria-label="หน้าหลัก ">
+            <button ng-click="layout.navigate('/')" aria-label="หน้าหลัก ">
                         หน้าหลัก
                     </button>
             <md-menu-context>
@@ -9,7 +9,7 @@
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="เกี่ยวกับโครงการ ">
+            <button ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ ">
                         เกี่ยวกับโครงการ
                     </button>
             <md-menu-context>
@@ -17,7 +17,7 @@
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="ความรู้สำหรับ ประชาชน ">
+            <button ng-click="layout.navigate('/knowledge/people')" aria-label="ความรู้สำหรับ ประชาชน ">
                         ความรู้สำหรับ ประชาชน
                     </button>
             <md-menu-context>
@@ -25,7 +25,7 @@
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="ความรู้สำหรับ บุคลากร ทางการแพทย์ ">
+            <button ng-click="layout.navigate('/knowledge/healthcare')" aria-label="ความรู้สำหรับ บุคลากร ทางการแพทย์ ">
                         ความรู้สำหรับ บุคลากร ทางการแพทย์
                     </button>
             <md-menu-context>
@@ -33,7 +33,7 @@
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="สำหรับคณะทำงาน UHOSNET ">
+            <button ng-click="layout.navigate('/member')" aria-label="สำหรับคณะทำงาน UHOSNET ">
                         สำหรับคณะทำงาน UHOSNET
                     </button>
             <md-menu-context>
@@ -41,7 +41,7 @@
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="ติดต่อเรา ">
+            <button ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา ">
                         ติดต่อเรา
                     </button>
             <md-menu-context>
@@ -52,16 +52,16 @@
     </md-menu-bar>
 </div>
 
-<div layout="row" layout-align="end center" class="menu-layout" hide-gt-sm hide-xs>
+<div layout="row" layout-align="end center" class="menu-layout" hide-gt-sm hide-xs >
     <md-menu-bar class="md-menu custom">
         <md-menu>
-            <button ng-click="doSomething() " aria-label="หน้าหลัก ">
+            <button ng-click="layout.navigate('/')" aria-label="หน้าหลัก">
                         หน้าหลัก
                     </button>
             <md-menu-content></md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="เกี่ยวกับโครงการ ">
+            <button ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ ">
                         เกี่ยวกับโครงการ
                     </button>
             <md-menu-content></md-menu-content>
@@ -72,21 +72,21 @@
             </button>
             <md-menu-content>
                 <md-menu-item>
-                    <md-button ng-click="ctrl.sampleAction('New Document', $event)">สำหรับประชาชน</md-button>
+                    <md-button ng-click="layout.navigate('/knowledge/people')">สำหรับประชาชน</md-button>
                 </md-menu-item>
                 <md-menu-item>
-                    <md-button ng-click="ctrl.sampleAction('New Spreadsheet', $event)">สำหรับบุคลากร ทางการแพทย์</md-button>
+                    <md-button ng-click="layout.navigate('/knowledge/healthcare')">สำหรับบุคลากร ทางการแพทย์</md-button>
                 </md-menu-item>
             </md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="สำหรับ UHOSNET">
+            <button ng-click="layout.navigate('/member')" aria-label="สำหรับ UHOSNET">
                         สำหรับ UHOSNET
                     </button>
             <md-menu-content></md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="doSomething() " aria-label="ติดต่อเรา ">
+            <button ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา ">
                         ติดต่อเรา
                     </button>
             <md-menu-content></md-menu-content>

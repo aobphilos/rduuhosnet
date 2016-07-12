@@ -1,0 +1,42 @@
+<div layout="column" id="aboutus">
+    <div flex layout-padding>
+        <div flex-offset-gt-xs="5" layout="row" layout-xs="column" flex-xs="95">
+            <div layout="column" layout-xs="row" flex="20" flex-sm="25" flex-gt-md="15" hide-xs>
+                <md-button class="md-raised md-primary" ng-click="ctrl.showSection('project')">ที่มาโครงการฯ</md-button>
+                <md-button class="md-raised md-primary" ng-click="ctrl.showSection('keys')">กุญแจ PLEASE</md-button>
+                <br hide show-xs />
+                <md-button class="md-raised md-primary" ng-click="ctrl.navigate('manual')">คู่มือการทำงาน</md-button>
+                <md-button class="md-raised md-primary" ng-click="ctrl.showSection('faq')">คำถามที่พบบ่อย</md-button>
+            </div>
+            <div hide show-xs layout="row" layout-align="end start">
+
+                <md-menu md-position-mode="target-right target">
+                    <md-button aria-label="Open Menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="material-icons md-color">chrome_reader_mode</i>
+                    </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.showSection('project')"> <span>ที่มาโครงการฯ</span> </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.showSection('keys')"> <span>กุญแจ PLEASE</span> </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.navigate('manual')"> <span>คู่มือการทำงาน</span> </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="ctrl.showSection('faq')"> <span>คำถามที่พบบ่อย</span> </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+
+            </div>
+
+            <div flex-offset="5" flex="75" flex-md="70" flex-sm="65" flex-xs="95">
+                <div ng-include="ctrl.template"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="divide-block"></div>
+</div>

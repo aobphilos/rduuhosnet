@@ -1,0 +1,31 @@
+.sidenav.custom .md-button {
+    width: 88%;
+}
+
+p.md-body-2 {
+    font-size: 16px;
+}
+
+.md-menu-container {
+    margin-bottom: 15px;
+}
+
+p.rounded {
+    border-radius: 20px;
+    padding: 20px;
+}
+
+p.question {
+    color: white;
+    background-color: #73AD21;
+    text-align: left;
+    text-indent: 0;
+}
+
+p.answer {
+    font-size: 16px;
+    color: white;
+    background-color: #4FB7CD;
+    text-align: justify;
+    text-indent: 45px;
+}

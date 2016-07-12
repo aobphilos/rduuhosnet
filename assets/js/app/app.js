@@ -37,6 +37,12 @@
                 templateUrl: '/js/app/templates/home/index.html',
                 caseInsensitiveMatch: true
             })
+            .when('/aboutus', {
+                controller: 'AboutUsCtrl',
+                controllerAs: 'ctrl',
+                templateUrl: '/js/app/templates/aboutus/index.html',
+                caseInsensitiveMatch: true
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -60,9 +66,7 @@
 
     function RDURun(
         $location,
-        $rootScope,
-        GApi, GAuth,
-        GData
+        $rootScope
     ) {
 
         $rootScope.$on('$routeChangeStart', routeChangeStart);
@@ -105,6 +109,7 @@
             var isLoginPage = current.$$route.regexp.test('/login');
 
         }
+
     }
 
 
