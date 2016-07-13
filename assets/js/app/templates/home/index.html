@@ -43,9 +43,9 @@
             </div>
         </md-toolbar>
     </md-subheader>
-    <md-content flex layout-padding>
+    <md-content layout-padding>
         <section layout="column" layout-gt-sm="row">
-            <div flex-offset="5" flex="90" flex-gt-sm="35">
+            <div flex-offset="5" flex-gt-sm="35">
                 <p>
                     <h3> โครงการได้จัดทำคำแนะนำสำหรับการดูแลด้านยา เพื่อความปลอดภัยของผู้ป่วยกลุ่มพิเศษ 6 กลุ่ม ได้แก่</h3>
                     <ol class="md-title">
@@ -63,25 +63,25 @@
                 </div>
             </div>
             <div class="divide-block"></div>
-            <div flex-offset="5" flex-offset-gt-sm="10" flex="90" flex-gt-sm="50">
+            <div flex-offset="5" flex-offset-gt-sm="10" flex-gt-sm="50">
                 <h3>สื่อมัลติมีเดีย</h3>
 
                 <div layout-xs="column" layout="row">
-                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                    <div flex-offset="5" flex-sm="55" flex-md="45" flex-gt-md="35">
                         <iframe width="85%" ng-src="https://www.youtube.com/embed/mm5uWG4SdtI?list=PLhREouoExlICK7Rrpg2dh4pkT82Jv-zt1" frameborder="1" allowfullscreen></iframe>
                         <p>สภาวะปัจจุบันของระบบสุขภาพกับการใช้ยาของผู้ป่วย</p>
                     </div>
-                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                    <div flex-offset="5" flex-sm="55" flex-md="45" flex-gt-md="35">
                         <iframe width="85%" src="https://www.youtube.com/embed/QhbDSeKM5Z0" frameborder="0" allowfullscreen></iframe>
                         <p>การใช้ยาในโรคหวัด</p>
                     </div>
                 </div>
                 <div layout-xs="column" layout="row">
-                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                    <div flex-offset="5" flex-sm="55" flex-md="45" flex-gt-md="35">
                         <iframe width="85%" src="https://www.youtube.com/embed/M3aEPkrHTm0?list=PLhREouoExlICK7Rrpg2dh4pkT82Jv-zt1" frameborder="0" allowfullscreen></iframe>
                         <p>ปัญหาจากการใช้ยาที่มากเกินไป การใช้ยาซ้ำซ้อน หรือการใช้ยาหมดอายุ</p>
                     </div>
-                    <div flex-offset="5" flex-xs="85" flex-sm="55" flex-md="45" flex-gt-md="35">
+                    <div flex-offset="5" flex-sm="55" flex-md="45" flex-gt-md="35">
                         <iframe width="85%" src="https://www.youtube.com/embed/kMrV3s0TQJE" frameborder="0" allowfullscreen></iframe>
                         <p>การใช้ยาในโรคท้องเสีย</p>
                     </div>
@@ -100,23 +100,23 @@
             </div>
         </md-toolbar>
     </md-subheader>
-    <md-content flex layout-padding>
+    <md-content layout-padding>
         <section layout="column" layout-gt-sm="row">
-            <div flex-offset="5" flex="90" flex-gt-sm="50">
+            <div flex-offset="5" flex-gt-sm="50">
                 <div layout="column" layout-gt-xs="row">
-                    <a flex="100" flex-gt-sm="80" flex-gt-md="60" ng-if="ctrl.db.hasImage" ng-repeat="img in ctrl.db.files track by $index" ng-href="{{img.urlLink}}" target="_blank">
+                    <a flex-sm="50" flex-md="80" flex-gt-md="60" ng-if="ctrl.db.hasImage" ng-repeat="img in ctrl.db.files track by $index" ng-href="{{img.urlLink}}" target="_blank">
                         <div class="event-image" style='background-image: url("{{img.urlShow}}");'></div>
                     </a>
                 </div>
-                <a flex ng-if="ctrl.db.hasImage" ng-href="{{ctrl.db.seemore}}" target="_blank" alt="more">เพิ่มเติม &gt; &gt;</a>
+                <a ng-if="ctrl.db.hasImage" ng-href="{{ctrl.db.seemore}}" target="_blank" alt="more">เพิ่มเติม &gt; &gt;</a>
 
             </div>
             <div class="divide-block"></div>
-            <div flex-offset-xs="0" flex-offset="5" flex="90" flex-gt-sm="30" layout="row" layout-align="center start">
+            <div flex-offset-xs="0" flex-offset="5" flex-gt-sm="30" layout="row" layout-align="center start">
 
-                <img hide-xs flex="20" flex-md="15" ng-src="/images/home/calendar.png" alt="calendar" />
+                <img hide-xs flex="15" ng-src="/images/home/calendar.png" alt="calendar" />
 
-                <div flex-xs="90" flex="80" flex-md="85"> <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rduhos%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FBangkok"
+                <div flex-sm="75" flex-gt-sm="85"> <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rduhos%40gmail.com&amp;color=%231B887A&amp;ctz=Asia%2FBangkok"
                         style="border-width:0" width="100%" height="315" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
@@ -130,10 +130,10 @@
             </div>
         </md-toolbar>
     </md-subheader>
-    <md-content flex layout-padding>
+    <md-content layout-padding>
         <section layout="column" layout-gt-sm="row">
 
-            <div flex-offset="5" flex-offset-xs="10" flex="90" flex-sm="65" flex-gt-md="60" layout="row" layout-xs="column">
+            <div flex-offset-xs="10" flex-offset-gt-xs="5" flex-gt-sm="55" layout="row" layout-xs="column">
                 <div flex layout-align="start center" layout="row">
                     <img flex="30" flex-xs="15" ng-src="/images/home/downloads.png" alt="download เอกสาร">
                     <a href="#download" flex>
@@ -149,17 +149,24 @@
                 </div>
             </div>
 
-            <div flex-offset-xs="10" flex-offset="5" flex-offset-gt-md="0" flex="90" flex-sm="30" flex-gt-md="35" layout-align="start center" layout="row">
+            <div flex-offset-xs="10" flex-offset-gt-xs="5" flex-gt-sm="35">
 
                 <ul>
                     <li>
                         <h4>เครือข่ายโรงพยาบาล</h4></li>
                     <li>
-                        <h4>สำนักงานคณะกรรมการอาหารและยา</h4></li>
+                        <a href="http://www.fda.moph.go.th/" target="_blank"><h4>สำนักงานคณะกรรมการอาหารและยา</h4></a>
+                    </li>
                     <li>
-                        <h4>สถาบันวิจัยระบบสาธารณสุข</h4></li>
+                        <a href="http://www.hsri.or.th/" target="_blank">
+                            <h4>สถาบันวิจัยระบบสาธารณสุข</h4>
+                        </a>
+                    </li>
                     <li>
-                        <h4>องค์การเภสัชกรรม</h4></li>
+                        <a href="http://www.gpo.or.th/" target="_blank">
+                            <h4>องค์การเภสัชกรรม</h4>
+                        </a>
+                    </li>
                 </ul>
 
 
@@ -174,7 +181,7 @@
             </div>
         </md-toolbar>
     </md-subheader>
-    <md-content flex layout-padding>
+    <md-content layout-padding>
         <section>
             <div flex-offset="5" flex="90">
                 <md-grid-list md-cols="3" md-cols-sm="6" md-cols-md="9" md-cols-gt-md="12" md-row-height="1:1" md-gutter="10px">
