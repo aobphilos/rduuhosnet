@@ -1,12 +1,67 @@
 <div layout="column" id="knowledge-people">
   <div flex layout-padding>
-    <md-grid-list md-cols-gt-md="12" md-cols="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px"
-      md-gutter-md="8px" md-gutter="4px">
-      <md-grid-tile ng-repeat="img in ctrl.images" ng-style="{
-            'background': tile.color
-          }" md-colspan-gt-sm="{{tile.colspan}}" md-rowspan-gt-sm="{{tile.rowspan}}">
-      </md-grid-tile>
-    </md-grid-list>
+    <div flex-offset="5" flex-offset-sm="0" layout="row" layout-sm="column" layout-xs="column">
+
+      <div hide show-gt-sm layout="column" flex-sm="90" flex-md="20" flex-gt-md="15">
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('kid')">การใช้ยาในเด็ก</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('preg')">การใช้ยาในหญิงมีครรภ์</md-button>
+        <br hide show-xs />
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('lactation')">การใช้ยาในหญิงให้นมบุตร</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('renal')">การใช้ยาในผู้ป่วยโรคไต</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('liver')">การใช้ยาในผู้ป่วยโรคตับ</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.showImage('geriatric')">การใช้ยาในผู้สูงอายุ</md-button>
+      </div>
+
+      <div hide show-sm layout="row" layout-align="end start">
+
+        <md-menu md-position-mode="target-right target">
+          <md-button aria-label="Open Menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <i class="material-icons md-color">chrome_reader_mode</i>
+          </md-button>
+          <md-menu-content width="3">
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('kid')"> <span>การใช้ยาในเด็ก</span>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('preg')"> <span>การใช้ยาในหญิงมีครรภ์</span>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('lactation')"> <span>การใช้ยาในหญิงให้นมบุตร</span>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('renal')"> <span>การใช้ยาในผู้ป่วยโรคไต</span>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('liver')"> <span>การใช้ยาในผู้ป่วยโรคตับ</span>
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.showImage('geriatric')"> <span>การใช้ยาในผู้สูงอายุ</span>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+
+      </div>
+
+      <div hide show-xs layout="column" flex-offset="5" flex="90">
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('kid')">การใช้ยาในเด็ก</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('preg')">การใช้ยาในหญิงมีครรภ์</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('lactation')">การใช้ยาในหญิงให้นมบุตร</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('renal')">การใช้ยาในผู้ป่วยโรคไต</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('liver')">การใช้ยาในผู้ป่วยโรคตับ</md-button>
+        <md-button class="md-raised md-primary" ng-click="ctrl.navigate('geriatric')">การใช้ยาในผู้สูงอายุ</md-button>
+      </div>
+
+      <div flex-offset-gt-md="5" flex-gt-md="80" flex-md="90"  flex-sm="90" hide-xs>
+        <img ng-src="{{ctrl.image}}" alt="รูปภาพแสดงข้อมูล">
+      </div>
+
+    </div>
   </div>
   <div class="divide-block"></div>
 </div>
