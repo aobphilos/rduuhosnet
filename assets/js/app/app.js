@@ -37,18 +37,6 @@
                 templateUrl: '/js/app/templates/aboutus/index.html',
                 caseInsensitiveMatch: true
             })
-            .when('/knowledge/people', {
-                controller: 'KnowledgePeopleCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: '/js/app/templates/knowledge/people/index.html',
-                caseInsensitiveMatch: true
-            })
-            .when('/knowledge/healthcare', {
-                controller: 'KnowledgeHealthCareCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: '/js/app/templates/knowledge/healthcare/index.html',
-                caseInsensitiveMatch: true
-            })
             .otherwise({
                 redirectTo: '/'
             });

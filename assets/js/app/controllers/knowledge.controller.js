@@ -2,22 +2,28 @@
   'use strict';
 
   angular
-    .module('rdu.ui')
-    .controller('KnowledgePeopleCtrl', [
+    .module('rdu.ui.knowledge')
+    .controller('PeopleCtrl', [
       '$rootScope',
       '$window',
-      '$timeout',
       '_',
-      KnowledgePeopleCtrl
+      PeopleCtrl
+    ])
+    .controller('HealthCareCtrl', [
+      '$rootScope',
+      '$window',
+      '_',
+      HealthCareCtrl
     ]);
 
-  function KnowledgePeopleCtrl($rootScope, $window, $timeout, _) {
+  function PeopleCtrl($rootScope, $window, _) {
     var vm = this;
 
-    vm.images = [{
-      name: "geriatric",
-      image: "/images/knowledge/people/geriatric.jpg"
-    },
+    vm.images = [
+      {
+        name: "geriatric",
+        image: "/images/knowledge/people/geriatric.jpg"
+      },
       {
         name: "kid",
         image: "/images/knowledge/people/kid.jpg"
@@ -37,9 +43,10 @@
       {
         name: "renal",
         image: "/images/knowledge/people/renal.jpg"
-      }];
+      }
+    ];
 
-    vm.showSection = showSection;
+    vm.showImage = showImage;
     vm.navigate = navigate;
 
     init();
@@ -54,15 +61,32 @@
     }
 
     function navigate(name) {
+      var image = _.filter(vm.images, function (s) {
+        return s.name === name;
+      });
+
+      if (image.length > 0)
+        $window.open(image[0]["image"], "_blank");
     }
 
     function init() {
-
 
       vm.showImage("kid");
 
     }
 
+  }
+
+  function HealthCareCtrl($rootScope, $window, _) {
+    var vm = this;
+
+    init();
+
+    function init() {
+
+
+
+    }
   }
 
 } ());
