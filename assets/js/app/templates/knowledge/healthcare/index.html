@@ -1,13 +1,14 @@
 <div layout="column" id="knowledge-healthcare">
-    <div layout-padding>
-        <br/>
-        <div flex-offset-gt-md="25" flex-offset-md="20" flex-gt-md="60" flex-gt-sm="40" flex-sm="75" layout="row" layout-wrap layout-align="center">
-            <div flex-offset="5" flex-xs="75" flex-sm="40" flex-gt-sm="35" ng-repeat="img in ctrl.images track by $index">
-                <img flex="100" ng-src="{{img.image}}" alt="{{img.name}}">
-                <div flex="100" class="label-overlay">{{img.name}}</div>
-                <div class="divide-block"></div>
-            </div>
-        </div>
+  <div flex layout-padding>
+    <br />
+    <div layout="row" flex-offset-gt-md="25" flex-offset-md="10" flex-offset-sm="5" flex-offset-xs="10" flex-gt-md="50" flex-md="80"
+      flex-sm="95" flex-xs="70" layout-wrap>
+      <div flex-offset="10" flex-gt-lg="35" flex-lg="40" flex-md="35" flex-sm="35" ng-repeat="med in ctrl.items track by $index" ng-click="ctrl.navigate(med)">
+        <img flex="100" ng-src="{{med.image}}" alt="{{med.name}}">
+        <div flex="100" class="image-label">{{med.name}}</div>
+        <br />
+      </div>
     </div>
-    <div class="divide-block"></div>
+  </div>
+  <div class="divide-block"></div>
 </div>
