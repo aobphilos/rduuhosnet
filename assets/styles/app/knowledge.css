@@ -1,7 +1,6 @@
-#knowledge-healthcare .label-overlay {
-    background-color: rgba(0, 0, 0, 0.35);
-    color: white;
-    padding: 5px;
-    line-height: 20px;
-    text-align: center;
+#knowledge-healthcare .image-label {
+  background-color: rgba(0,0,0,0.30);
+  color: white;
+  text-align: center;
+  padding: 5px;
 }
