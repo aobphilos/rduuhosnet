@@ -1,28 +1,28 @@
-.sidenav.custom .md-button {
+#aboutus .sidenav.custom .md-button {
     width: 88%;
 }
 
-p.md-body-2 {
+#aboutus .md-body-2 {
     font-size: 16px;
 }
 
-.md-menu-container {
+#aboutus .md-menu-container {
     margin-bottom: 15px;
 }
 
-p.rounded {
-    border-radius: 20px;
-    padding: 20px;
+#aboutus .rounded {
+    border-radius: 15px;
+    padding: 15px 20px;
 }
 
-p.question {
+#aboutus .question {
     color: white;
     background-color: #73AD21;
     text-align: left;
     text-indent: 0;
 }
 
-p.answer {
+#aboutus .answer {
     font-size: 16px;
     color: white;
     background-color: #4FB7CD;
