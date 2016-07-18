@@ -86,7 +86,7 @@
 
     var vm = this;
 
-    const LINK_TYPE = {
+    var LINK_TYPE = {
       NONE: 0,
       LINK: 1,
       PAGE: 2
