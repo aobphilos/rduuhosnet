@@ -76,7 +76,7 @@
 
     }
 
-    function  init() {
+    function init() {
       vm.showImage('kid');
     }
 
@@ -90,7 +90,7 @@
       NONE: 0,
       LINK: 1,
       PAGE: 2
-    }
+    };
 
     vm.items = [
       {
@@ -143,6 +143,7 @@
     function init() {
 
     }
+
   }
 
   function KnowledgeHealthcareLabelCtrl($rootScope, _) { }
