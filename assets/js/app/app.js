@@ -31,12 +31,6 @@
 
         // Route
         $routeProvider
-            .when('/', {
-                controller: 'HomeCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: '/js/app/templates/home/index.html',
-                caseInsensitiveMatch: true
-            })
             .when('/aboutus', {
                 controller: 'AboutUsCtrl',
                 controllerAs: 'ctrl',
