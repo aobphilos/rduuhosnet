@@ -1,15 +1,27 @@
-(function() {
+(function () {
     'use strict';
 
     angular
-        .module('rdu.ui')
+        .module('rdu.ui.home')
         .controller('HomeCtrl', [
             '$rootScope',
             '$timeout',
             'DBFileApi',
             'StateApi',
             HomeCtrl
+        ])
+        .controller('HomeDownloadCtrl', [
+            '$rootScope',
+            '$location',
+            HomeDownloadCtrl
+        ])
+        .controller('HomeMediaCtrl', [
+            '$rootScope',
+            '$location',
+            HomeMediaCtrl
         ]);
+
+
 
     function HomeCtrl($rootScope, $timeout, DBFileApi, StateApi) {
         var vm = this;
@@ -47,11 +59,11 @@
 
         function getDropboxFiles() {
             DBFileApi.get(null).$promise
-                .then(function(files) {
+                .then(function (files) {
                     if (files.length > 0) {
                         vm.db.hasImage = true;
                         angular.forEach(files,
-                            function(file) {
+                            function (file) {
                                 if (!/seemore/ig.test(file.name)) {
                                     vm.db.files.push(file);
                                 } else {
@@ -63,7 +75,7 @@
         }
 
         function init() {
-            
+
             vm.db = {
                 hasImage: false,
                 files: [],
@@ -78,7 +90,7 @@
 
             getDropboxFiles();
 
-            angular.element(document).ready(function() {
+            angular.element(document).ready(function () {
                 $timeout(initCarousel, 100);
             });
 
@@ -87,4 +99,24 @@
 
     }
 
-}());
+    function HomeDownloadCtrl($rootScope, $location) {
+        var vm = this;
+
+        init();
+
+        function init() {
+
+        }
+    }
+
+    function HomeMediaCtrl($rootScope, $location) {
+        var vm = this;
+
+        init();
+
+        function init() {
+
+        }
+    }
+
+} ());
