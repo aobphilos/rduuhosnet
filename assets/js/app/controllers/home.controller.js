@@ -18,6 +18,7 @@
         .controller('HomeMediaCtrl', [
             '$rootScope',
             '$location',
+            '$sce',
             HomeMediaCtrl
         ]);
 
@@ -109,10 +110,55 @@
         }
     }
 
-    function HomeMediaCtrl($rootScope, $location) {
+    function HomeMediaCtrl($rootScope, $location, $sce) {
         var vm = this;
 
+        vm.media = [
+            {
+                desc: "สภาวะปัจจุบันของระบบสุขภาพ กับการใช้ยาของผู้ป่วย",
+                url: "https://www.youtube.com/embed/o64T7Cac7ts"
+            },
+            {
+                desc: "ข้อปฏิบัติตัวเมื่อผู้ป่วยมารับยาจากเภสัชกร",
+                url: "https://www.youtube.com/embed/RT3FCFIQipg"
+            },
+            {
+                desc: "รู้จักยา และอาการไม่พึงประสงค์",
+                url: "https://www.youtube.com/embed/uRVnCHXI0ig"
+            },
+            {
+                desc: "ใช้ยาอย่างไรให้ถูกวิธี และการเก็บรักษายา",
+                url: "https://www.youtube.com/embed/lSev1owleLs"
+            },
+            {
+                desc: "ปัญหาจากการใช้ยา",
+                url: "https://www.youtube.com/embed/Nc1uDNiDC5U"
+            },
+            {
+                desc: "การแพ้ยา และอาการแพ้ยา",
+                url: "https://www.youtube.com/embed/l3UWnvaTxNc"
+            },
+            {
+                desc: "โรคท้องเสียจำเป็นต้องกินยาปฏิชีวนะ หรือไม่?",
+                url: "https://www.youtube.com/embed/LSbtg3JrTKM"
+            },
+            {
+                desc: "การใช้ยาสำหรับแผลเลือดออก",
+                url: "https://www.youtube.com/embed/kzyagJYHMwk"
+            },
+            {
+                desc: "การใช้ยาปฏิชีวนะในโรคหวัด",
+                url: "https://www.youtube.com/embed/QhbDSeKM5Z0"
+            }
+        ];
+
+        vm.trustUrl = trustUrl;
+
         init();
+
+        function trustUrl(url) {
+            return $sce.trustAsResourceUrl(url);
+        }
 
         function init() {
 

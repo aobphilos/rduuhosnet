@@ -1,6 +1,10 @@
+#knowledge-people .small-menu {
+    left: 10px
+}
+
 #knowledge-healthcare .image-label {
-  background-color: rgba(0,0,0,0.30);
-  color: white;
-  text-align: center;
-  padding: 5px;
+    background-color: rgba(0, 0, 0, 0.30);
+    color: white;
+    text-align: center;
+    padding: 5px;
 }
