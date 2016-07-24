@@ -1,11 +1,15 @@
 <div layout="column" id="home-media">
-   <div layout-padding>
-    <div flex-offset="15" flex-offset-xs="5" layout="column" layout-align="center">
-      <div flex="90" class="md-color">
+  <div layout-padding>
+    <div layout="row" layout-align="center" layout-wrap>
+      <div flex="90" class="md-color" layout="row" layout-align="center">
         <p class="md-title">คลิปวีดีโอ ความรู้สำหรับประชาชน เพื่อส่งเสริมความปลอดภัยด้านยา</p>
       </div>
-      <div flex="90">
-     
+      <div flex="90" layout="row" layout-wrap layout-align="center">
+        <div class="youtube-pane" ng-repeat="media in ctrl.media">
+          <iframe class="youtube-item" ng-src="{{ctrl.trustUrl(media.url)}}" frameborder="0" allowfullscreen></iframe>
+          <h5 class="md-subhead" flex="85">{{media.desc}}</h5>
+          <br />
+        </div>
       </div>
     </div>
     <div class="divide-block"></div>
