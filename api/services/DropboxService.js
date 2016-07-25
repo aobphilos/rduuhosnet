@@ -1,10 +1,12 @@
 var _ = require('lodash');
 var Q = require('q');
 var Dropbox = require('dropbox');
+var https = require('https');
+var fs = require('fs');
 
 module.exports = {
 
-    listFiles: function() {
+    listFiles: function () {
 
         var deferred = Q.defer();
 
@@ -20,20 +22,41 @@ module.exports = {
 
         return deferred.promise;
 
+    },
+
+    getLabelFile: function () {
+
+        var deferred = Q.defer();
+
+        RduDropbox.getLabelFile()
+            .then(deferred.resolve)
+            .fail(error);
+
+        function error(err) {
+            console.log(err);
+            deferred.reject(err);
+        }
+
+        return deferred.promise;
+
+
     }
 
 };
 
-var RduDropbox = (function() {
+var RduDropbox = (function () {
     var _this = this;
 
     _this.context = {};
     _this.getContext = getContext;
     _this.getUrl = getUrl;
+    _this.getStreamFromLink = getStreamFromLink;
+    _this.checkLabelValid = checkLabelValid;
 
     var adapter = {
         getMeta: getMeta,
-        getAllLink: getAllLink
+        getAllLink: getAllLink,
+        getLabelFile: getLabelFile
     };
 
     function getContext() {
@@ -58,8 +81,8 @@ var RduDropbox = (function() {
         var dbx = _this.getContext();
 
         dbx.filesListFolder({
-                path: sails.config.dropbox.target_path
-            })
+            path: sails.config.dropbox.target_path
+        })
             .then(success)
             .catch(error);
 
@@ -134,8 +157,8 @@ var RduDropbox = (function() {
         var dbx = _this.getContext();
 
         dbx.sharingCreateSharedLink({
-                path: file.path
-            })
+            path: file.path
+        })
             .then(success)
             .catch(error);
 
@@ -153,6 +176,85 @@ var RduDropbox = (function() {
         }
 
         return deferred.promise;
+    }
+
+    function checkLabelValid(path) {
+        var deferred = Q.defer();
+
+        fs.stat(path, (err, stat) => {
+            if (err) {
+                deferred.resolve(false);
+            } else {
+
+                var timeDiff = Math.abs(Date.now() - stat.mtime);
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                deferred.resolve((diffDays <= 1));
+            }
+        });
+
+        return deferred.promise;
+    }
+
+    function getLabelFile() {
+
+        var deferred = Q.defer();
+
+        _this.checkLabelValid(sails.config.excel.label)
+            .then((isValid) => {
+                if (!isValid) {
+                    var dbx = _this.getContext();
+
+                    dbx.filesGetTemporaryLink({
+                        path: sails.config.dropbox.data_path + "/label.xlsx"
+                    })
+                        .then(success)
+                        .catch(error);
+                } else {
+                    deferred.resolve(sails.config.excel.label);
+                }
+            });
+
+        function success(res) {
+            _this.getStreamFromLink(res.link)
+                .then(deferred.resolve)
+                .fail(deferred.reject);
+        }
+
+        function error(err) {
+            deferred.reject(err);
+        }
+
+        return deferred.promise;
+    }
+
+    function getStreamFromLink(link) {
+
+        var deferred = Q.defer();
+        var path = sails.config.excel.label;
+        var file = fs.createWriteStream(path);
+
+        https.get(link, success).on('error', error);
+
+        function success(res) {
+            res.on('data', (d) => {
+                file.write(d);
+            });
+
+            res.on('end', () => {
+                file.end(() => {
+                    deferred.resolve(path);
+                });
+            });
+
+        }
+
+        function error(err) {
+            deferred.reject(err);
+        }
+
+        return deferred.promise;
+
     }
 
     return adapter;

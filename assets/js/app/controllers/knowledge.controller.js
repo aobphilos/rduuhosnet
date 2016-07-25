@@ -19,6 +19,7 @@
     .controller('KnowledgeHealthcareLabelCtrl', [
       '$rootScope',
       '_',
+      'DBFileApi',
       KnowledgeHealthcareLabelCtrl
     ]);
 
@@ -146,7 +147,55 @@
 
   }
 
-  function KnowledgeHealthcareLabelCtrl($rootScope, _) { }
+  function KnowledgeHealthcareLabelCtrl($rootScope, _, DBFileApi) {
+
+    var vm = this;
+
+    vm.drugLabel = [];
+    vm.currentLabel = {};
+
+    vm.chooseLabel = chooseLabel;
+    vm.labelKeypress = labelKeypress;
+
+    init();
+
+    function loadDrugLabel(params) {
+      DBFileApi.getDrugLabel(null).$promise.then(function (data) {
+        vm.drugLabel = data;
+      });
+    }
+
+    function chooseLabel(name) {
+      var item = _.find(vm.drugLabel, ['drug_name', name]);
+      vm.currentLabel = item;
+      console.log(item);
+    }
+
+    function findLabel(name) {
+      var item = _.find(vm.drugLabel, function (dg) {
+        return _.startsWith(dg.drug_name.toLowerCase(), name.toLowerCase());
+      });
+
+      vm.currentLabel = item;
+      console.log(item);
+    }
+
+    function convertCR(text) {
+      return text.replace(/\r\n/g, "<br>").replace(/\n/g, "<br>");
+    }
+
+    function labelKeypress(e) {
+
+      var text = angular.element(e.currentTarget).val();
+      findLabel(text);
+
+    }
+
+    function init() {
+      loadDrugLabel();
+    }
+
+  }
 
 } ());
 

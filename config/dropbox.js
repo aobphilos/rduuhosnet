@@ -4,6 +4,6 @@ module.exports.dropbox = {
     access_token: 'wnJIMG4lUdAAAAAAAAAAJL4BgxwNQw7lFaQ5Kl2XL13KtHYB7QH4nkMtUgib34L9',
     target_path: '/Events',
     display_limit: 2,
-    file_filter: /^(.*\.?(png|jpg|jpeg))$/i
-
+    file_filter: /^(.*\.?(png|jpg|jpeg))$/i,
+    data_path: '/Apps/data'
 };
