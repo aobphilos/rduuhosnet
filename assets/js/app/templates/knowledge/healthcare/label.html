@@ -1,5 +1,25 @@
 <div layout="column" id="knowledge-healthcare-label">
   <div flex layout-padding>
-    Labeling
+    <div layout="row" layout-wrap>
+      <div flex="90" class="md-color" layout="row" layout-align="center">
+        <div flex="65" layout="row" layout-align="center">
+          <p class="md-title">ฉลากยา และฉลากยาเสริม</p>
+        </div>
+        <div flex-offset="5" flex="15">
+          <md-input-container md-no-float>
+            <label for="findLabel">ค้นหาชื่อยา</label>
+            <input name="findLabel" type="type" aria-label="name" ng-keypress="ctrl.labelKeypress($event)">
+          </md-input-container>
+        </div>
+      </div>
+      <div flex="90" layout="row" layout-align="center">
+        <div flex="65">
+          <h3>{{ctrl.currentLabel.drug_name}}</h3>
+        </div>
+        <div flex-offset="5" flex="15" layout="column">
+          <md-button class="md-raised md-primary" ng-repeat="dg in ctrl.drugLabel track by $index" ng-click="ctrl.chooseLabel(dg.drug_name)">{{dg.drug_name}}</md-button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
