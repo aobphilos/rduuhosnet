@@ -24,7 +24,7 @@ module.exports = {
 
         var list = DropboxService.getLabelFile()
             .then(function (path) {
-                
+
                 var workbook = xlsx.readFile(path);
                 var sheetname = workbook.SheetNames[0];
                 var worksheet = workbook.Sheets[sheetname];

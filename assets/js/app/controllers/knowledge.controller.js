@@ -168,7 +168,6 @@
     function chooseLabel(name) {
       var item = _.find(vm.drugLabel, ['drug_name', name]);
       vm.currentLabel = item;
-      console.log(item);
     }
 
     function findLabel(name) {
@@ -177,7 +176,6 @@
       });
 
       vm.currentLabel = item;
-      console.log(item);
     }
 
     function convertCR(text) {
