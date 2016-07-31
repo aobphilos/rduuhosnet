@@ -1,49 +1,37 @@
 <div layout="row" layout-align="end center" class="menu-layout" hide-sm hide-xs>
     <md-menu-bar class="md-menu-bar custom" >
         <md-menu>
-            <button ng-click="layout.navigate('/')" aria-label="หน้าหลัก ">
-                        หน้าหลัก
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isHome}"   ng-click="layout.navigate('/')" aria-label="หน้าหลัก">หน้าหลัก</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ ">
-                        เกี่ยวกับโครงการ
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isAboutUs}"   ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ">เกี่ยวกับโครงการ</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/knowledge/people')" aria-label="ความรู้สำหรับ ประชาชน ">
-                        ความรู้สำหรับ ประชาชน
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isKnowledgePeople}" ng-click="layout.navigate('/knowledge/people')" aria-label="ความรู้สำหรับ ประชาชน">ความรู้สำหรับ ประชาชน</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/knowledge/healthcare')" aria-label="ความรู้สำหรับ บุคลากร ทางการแพทย์ ">
-                        ความรู้สำหรับ บุคลากร ทางการแพทย์
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isKnowledgeHealthCare}" ng-click="layout.navigate('/knowledge/healthcare')" aria-label="ความรู้สำหรับ บุคลากร ทางการแพทย์ ">ความรู้สำหรับ บุคลากร ทางการแพทย์</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/member')" aria-label="สำหรับคณะทำงาน UHOSNET ">
-                        สำหรับคณะทำงาน UHOSNET
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isMember}"  ng-click="layout.navigate('/member')" aria-label="สำหรับคณะทำงาน UHOSNET">สำหรับคณะทำงาน UHOSNET</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
             </md-menu-context>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา ">
-                        ติดต่อเรา
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isContactUs}" ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา">ติดต่อเรา</button>
             <md-menu-context>
                 <md-menu-item></md-menu-item>
 
@@ -55,40 +43,32 @@
 <div layout="row" layout-align="end center" class="menu-layout" hide-gt-sm hide-xs >
     <md-menu-bar class="md-menu custom">
         <md-menu>
-            <button ng-click="layout.navigate('/')" aria-label="หน้าหลัก">
-                        หน้าหลัก
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isHome}"  ng-click="layout.navigate('/')" aria-label="หน้าหลัก">หน้าหลัก</button>
             <md-menu-content></md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ ">
-                        เกี่ยวกับโครงการ
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isAboutUs}" ng-click="layout.navigate('/aboutus')" aria-label="เกี่ยวกับโครงการ">เกี่ยวกับโครงการ</button>
             <md-menu-content></md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="$mdOpenMenu()" aria-label="ความรู้">
+            <button class="md-button" ng-class="{'md-primary': current.page.isKnowledgePeople || current.page.isKnowledgeHealthCare}" ng-click="$mdOpenMenu()" aria-label="ความรู้">
                 ความรู้
             </button>
             <md-menu-content>
                 <md-menu-item>
-                    <md-button ng-click="layout.navigate('/knowledge/people')">สำหรับประชาชน</md-button>
+                    <md-button ng-class="{'md-primary': current.page.isKnowledgePeople}" ng-click="layout.navigate('/knowledge/people')">สำหรับประชาชน</md-button>
                 </md-menu-item>
                 <md-menu-item>
-                    <md-button ng-click="layout.navigate('/knowledge/healthcare')">สำหรับบุคลากร ทางการแพทย์</md-button>
+                    <md-button ng-class="{'md-primary': current.page.isKnowledgeHealthCare}" ng-click="layout.navigate('/knowledge/healthcare')">สำหรับบุคลากร ทางการแพทย์</md-button>
                 </md-menu-item>
             </md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/member')" aria-label="สำหรับ UHOSNET">
-                        สำหรับ UHOSNET
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isMember}" ng-click="layout.navigate('/member')" aria-label="สำหรับ UHOSNET">สำหรับ UHOSNET</button>
             <md-menu-content></md-menu-content>
         </md-menu>
         <md-menu>
-            <button ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา ">
-                        ติดต่อเรา
-                    </button>
+            <button class="md-button" ng-class="{'md-primary': current.page.isContactUs}" ng-click="layout.navigate('/contactus')" aria-label="ติดต่อเรา">ติดต่อเรา</button>
             <md-menu-content></md-menu-content>
         </md-menu>
     </md-menu-bar>

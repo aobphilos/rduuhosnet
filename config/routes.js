@@ -34,6 +34,7 @@ module.exports.routes = {
 
     '/': 'Homecontroller.index',
     'get /api/db/files': 'Homecontroller.getDropboxFiles',
+    'get /api/db/drug-label': 'Homecontroller.getDrugLabel'
 
     /***************************************************************************
      *                                                                          *

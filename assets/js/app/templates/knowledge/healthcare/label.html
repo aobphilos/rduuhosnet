@@ -1,0 +1,64 @@
+<div layout="column" id="knowledge-healthcare-label">
+  <div flex layout-padding>
+    <div layout="row" layout-wrap>
+      <div flex="100" class="md-color" layout="row" layout-align="center">
+        <div flex="70" flex-md="65" layout="row" layout-align="center" hide-sm hide-xs>
+          <p class="md-title">ฉลากยา และฉลากยาเสริม</p>
+        </div>
+        <div flex-offset="5" flex-offset-xs="0" flex="20" flex-md="25" flex-sm="100"  flex-xs="100" >
+          <md-input-container md-no-float hide-sm hide-xs>
+            <label for="findLabel">ค้นหาชื่อยา</label>
+            <input name="findLabel" type="type" aria-label="name" ng-keypress="ctrl.labelKeypress($event)">
+          </md-input-container>
+          <md-input-container hide-gt-sm>
+            <label>ฉลากยา และฉลากยาเสริม</label>
+            <md-select ng-model="ctrl.currentLabel" class="select-drug">
+              <md-optgroup label="ฉลากยา และฉลากยาเสริม">
+                <md-option ng-value="dg" ng-repeat="dg in ctrl.drugLabel track by $index">{{dg.drug_name}}</md-option>
+              </md-optgroup>
+            </md-select>
+          </md-input-container>
+        </div>
+      </div>
+      <div flex="100" layout="row" layout-align="center">
+        <div flex="70" flex-md="65" flex-sm="100" flex-xs="100">
+          <div layout="row" layout-align="center" class="md-bg-color">
+            <h4 class="md-subhead">โรงพยาบาลส่งเสริมการใช้ยาอย่างสมเหตุผล</h4>
+          </div>
+          <div layout="row" layout-wrap layout-padding>
+            <div flex-gt-md="50" flex="100">
+              <label class="md-title">ชื่อยา</label>
+              <p class="input-box">{{ctrl.currentLabel.drug_name | defaultDash}}</p>
+            </div>
+            <div flex-gt-md="50" flex="100">
+              <label class="md-title">ข้อบ่งใช้</label>
+              <p class="input-box">{{ctrl.currentLabel.term_of_use | defaultDash}}</p>
+            </div>
+            <div flex-gt-md="50" flex="100">
+              <label class="md-title">คำเตือน</label>
+              <p class="input-box">{{ctrl.currentLabel.warning_label | defaultDash}}</p>
+            </div>
+            <div flex-gt-md="50" flex="100">
+              <label class="md-title">ฉลากยาเสริม</label>
+              <p class="input-box">{{ctrl.currentLabel.remark | defaultDash}}</p>
+            </div>
+            <div flex="100">
+              <label class="md-title">หมายเหตุ</label>
+              <p class="input-box" ng-bind-html="ctrl.currentLabel.text_label | defaultDash | lineBreak"></p>
+            </div>
+          </div>
+        </div>
+        <div flex-offset="5" flex="20" flex-md="25" layout="column" hide-sm hide-xs>
+          <!--<md-button class="md-raised md-primary" ng-repeat="dg in ctrl.drugLabel track by $index" ng-click="ctrl.chooseLabel(dg.drug_name)">{{dg.drug_name}}</md-button>-->
+          <md-list class="md-list-scroll">
+            <md-list-item class="md-primary md-hue-2" ng-repeat="dg in ctrl.drugLabel track by $index" ng-click="ctrl.chooseLabel(dg.drug_name)">
+              <div class="md-list-item-text">
+                <p>{{dg.drug_name}}</p>
+              </div>
+            </md-list-item>
+          </md-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

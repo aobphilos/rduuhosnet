@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -10,9 +10,14 @@
             "get": {
                 method: 'GET',
                 isArray: true
+            },
+            "getDrugLabel": {
+                url: '/api/db/drug-label',
+                method: 'GET',
+                isArray: true
             }
         });
     }
 
 
-}());
+} ());

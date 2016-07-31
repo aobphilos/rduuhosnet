@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -37,6 +37,18 @@
                 templateUrl: '/js/app/templates/aboutus/index.html',
                 caseInsensitiveMatch: true
             })
+            .when('/member', {
+                controller: 'MemberCtrl',
+                controllerAs: 'ctrl',
+                templateUrl: '/js/app/templates/member/index.html',
+                caseInsensitiveMatch: true
+            })
+            .when('/contactus', {
+                controller: 'ContactUsCtrl',
+                controllerAs: 'ctrl',
+                templateUrl: '/js/app/templates/contactus/index.html',
+                caseInsensitiveMatch: true
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -62,6 +74,10 @@
         $location,
         $rootScope
     ) {
+
+        var current = { page: {} };
+        $rootScope.current = current;
+
 
         $rootScope.$on('$routeChangeStart', routeChangeStart);
         $rootScope.$on('$routeChangeSuccess', routeChangeSuccess);
@@ -100,12 +116,24 @@
 
             if (!current.$$route) return;
 
-            var isLoginPage = current.$$route.regexp.test('/login');
+            var regexp = current.$$route.regexp;
+            var current = {
+                page: {
+                    isHome: regexp.test('/'),
+                    isAboutUs: regexp.test('/aboutus'),
+                    isKnowledgePeople: regexp.test('/knowledge/people'),
+                    isKnowledgeHealthCare: regexp.test('/knowledge/healthcare'),
+                    isMember: regexp.test('/member'),
+                    isContactUs: regexp.test('/contactus'),
+                }
+            };
 
+            angular.extend($rootScope.current, current);
+            
         }
 
     }
 
 
 
-}());
+} ());
