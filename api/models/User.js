@@ -7,8 +7,6 @@
 
 module.exports = {
 
-    connection: 'localDiskDb',
-
     attributes: {
         id: {
             type: 'integer',
