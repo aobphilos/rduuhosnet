@@ -1,5 +1,63 @@
-<div layout="column" id="aboutus">
+<div layout="column" id="member">
   <div flex layout-padding>
-    <h3 class="md-title">Member</h3>
+
+    <div layout="row" layout-align="center">
+
+      <div flex="30" flex-md="40" flex-sm="50" flex-xs="75" ng-if="!ctrl.isAuthenticated">
+        <form name="loginForm">
+          <div class="divide-block"></div>
+          <md-card>
+            <md-card-title layout-align="center">
+              <i hide-xs class="material-icons md-color md-48">security</i>
+            </md-card-title>
+
+            <md-card-content>
+              <md-input-container class="md-block">
+                <label>Username</label>
+                <input required name="username" ng-model="ctrl.username" ng-keydown="ctrl.inputKeyDown($event, !loginForm.$invalid)">
+                <div ng-messages="loginForm.username.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Password</label>
+                <input type="password" required name="password" ng-model="ctrl.password" ng-keydown="ctrl.inputKeyDown($event, !loginForm.$invalid)">
+                <div ng-messages="loginForm.password.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+              <md-button class="md-raised md-primary" ng-click="ctrl.login(!loginForm.$invalid)">Login</md-button>
+            </md-card-actions>
+          </md-card>
+        </form>
+        <div id="showToast"></div>
+      </div>
+
+      <div layout="row" layout-align="center" layout-wrap ng-if="ctrl.isAuthenticated">
+        <div flex="90" class="md-color" layout-align="start">
+          <p class="md-title">เอกสาร</p>
+        </div>
+        <div flex="90" layout-align="center">
+          <ul class="md-subhead download-list">
+            <li>
+              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDdnV0dHM3MjNYSmM/view" target="_blank">เกณฑ์จริยธรรมจากอย.7 มค 59</a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDU0N1dVZkLVUxWVE/view" target="_blank">แนวทางปฏิบัติตามเกณฑ์จริยธรรมว่าด้วย การจัดซื้อจัดหาและการส่งเสริมการขายยาและเวชภัณฑ์ ของโรงพยาบาลในเครือข่าย UHOSNET</a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDZ3Y2MzJOMTVxTGc/view" target="_blank">(ตัวอย่าง)ประกาศเกณฑ์จริยธรรมส่งเสริมการขายยา</a>
+            </li>
+            <li>
+              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDUWJHZVJLUHB5QlE/view" target="_blank">UHOSNET Pharmacy and Therapeutics Committees Checklist</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>
