@@ -8,3 +8,23 @@
     text-align: center;
     padding: 5px;
 }
+
+#knowledge-healthcare-label .md-list-scroll {
+    height: 530px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#knowledge-healthcare-label md-input-container {
+    margin: 10px 0;
+}
+
+#knowledge-healthcare-label .select-drug{
+    min-width: 200px;
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+    #knowledge-healthcare-label .md-list-scroll {
+        height: 800px;
+    }
+}

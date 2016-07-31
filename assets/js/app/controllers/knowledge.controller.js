@@ -161,7 +161,7 @@
 
     function loadDrugLabel(params) {
       DBFileApi.getDrugLabel(null).$promise.then(function (data) {
-        vm.drugLabel = data;
+        vm.drugLabel = _.orderBy(data, ['drug_name'], ['asc']);
       });
     }
 
