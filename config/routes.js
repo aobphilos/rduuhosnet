@@ -34,8 +34,12 @@ module.exports.routes = {
 
     '/': 'Homecontroller.index',
     'get /api/db/files': 'Homecontroller.getDropboxFiles',
-    'get /api/db/drug-label': 'Homecontroller.getDrugLabel'
+    'get /api/db/drug-label': 'Homecontroller.getDrugLabel',
 
+    'post /api/login': 'AuthController.login',
+    'get /api/logout': 'AuthController.logout',
+    'get /api/isauthen': 'AuthController.isauthen',
+    
     /***************************************************************************
      *                                                                          *
      * Custom routes here...                                                    *
