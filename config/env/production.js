@@ -16,10 +16,9 @@ module.exports = {
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
-
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
+  models: {
+    connection: 'someMongodbServer'
+  },
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
@@ -34,5 +33,17 @@ module.exports = {
   // log: {
   //   level: "silent"
   // }
+
+  session: {
+    secret: '213e91924c9b6228dbd848caedb156f3',
+
+    adapter: 'connect-mongo',
+    url: process.env.MONGODB_URI,
+    collection: 'sessions',
+    auto_reconnect: true,
+    ssl: false,
+    stringify: true
+  }
+
 
 };

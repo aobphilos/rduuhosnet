@@ -3,10 +3,14 @@
         <p class="md-title">คำถามที่พบบ่อย</p>
     </div>
 </div>
-<div flex layout="column">
-    <div flex-gt-xs="100" ng-repeat="qa in ctrl.questions track by $index">
-        <p class="md-body-2 rounded question">{{qa.question}}</p>
-        <p class="md-body-1 rounded answer">{{qa.answer}}</p>
+<div layout="row" layout-wrap layout-padding>
+    <div flex="100" ng-repeat="qa in ctrl.questions track by $index">
+        <div>
+            <p class="md-body-2 rounded question">{{qa.question}}</p>
+        </div>
+        <div>
+            <p class="md-body-1 rounded answer">{{qa.answer}}</p>
+        </div>
     </div>
 </div>
 <div class="divide-block"></div>
