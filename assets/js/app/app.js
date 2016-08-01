@@ -68,6 +68,12 @@
             // default shades
             .accentPalette('purple');
 
+
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.common = {};
+        }        
+        $httpProvider.defaults.headers.common["Cache-Control"] = "no-cache";
+        // $httpProvider.defaults.headers.common["Pragma"] = "no-cache";
     }
 
     function RDURun(
@@ -129,7 +135,7 @@
             };
 
             angular.extend($rootScope.current, current);
-            
+
         }
 
     }
