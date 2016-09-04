@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div flex-offset="5">
-                    <a  ng-href="/#/home/media" alt="more">เพิ่มเติม &gt; &gt;</a>
+                    <a ng-href="/#/home/media" alt="more">เพิ่มเติม &gt; &gt;</a>
                 </div>
             </div>
         </section>
@@ -105,7 +105,7 @@
             <div flex-offset="5" flex-gt-sm="50">
                 <div layout="column" layout-gt-xs="row">
                     <a flex-sm="50" flex-md="80" flex-gt-md="60" ng-if="ctrl.db.hasImage" ng-repeat="img in ctrl.db.files track by $index" ng-href="{{img.urlLink}}" target="_blank">
-                        <div class="event-image" style='background-image: url("{{img.urlShow}}");'>                           
+                        <div class="event-image" style='background-image: url("{{img.urlShow}}");'>
                         </div>
                     </a>
                 </div>
@@ -137,7 +137,7 @@
             <div flex-offset-xs="10" flex-offset-gt-xs="5" flex-gt-sm="55" layout="row" layout-xs="column">
                 <div flex layout-align="start center" layout="row">
                     <img flex="30" flex-xs="15" ng-src="/images/home/downloads.png" alt="download เอกสาร">
-                    <a  ng-href="/#/home/download" flex>
+                    <a ng-href="/#/home/download" flex>
                         <h3 flex-offset="5">download เอกสาร</h3>
                     </a>
                 </div>
@@ -151,7 +151,6 @@
             </div>
 
             <div flex-offset-xs="10" flex-offset-gt-xs="5" flex-gt-sm="35">
-
                 <ul>
                     <li>
                         <h4>เครือข่ายโรงพยาบาล</h4></li>
@@ -168,9 +167,17 @@
                             <h4>องค์การเภสัชกรรม</h4>
                         </a>
                     </li>
+                    <li>
+                        <a href="http://med.mahidol.ac.th/poisoncenter/" target="_blank">
+                            <h4>ศูนย์พิษวิทยารามาธิบดี</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.si.mahidol.ac.th/th/division/shtc/Home_shtc.html" target="_blank">
+                            <h4>งานพิษวิทยา โรงพยาบาลศิริราช</h4>
+                        </a>
+                    </li>
                 </ul>
-
-
             </div>
         </section>
     </md-content>
