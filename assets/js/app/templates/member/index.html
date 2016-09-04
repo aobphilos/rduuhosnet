@@ -41,17 +41,21 @@
         </div>
         <div flex="90" layout-align="center">
           <ul class="md-subhead download-list">
-            <li>
-              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDdnV0dHM3MjNYSmM/view" target="_blank">เกณฑ์จริยธรรมจากอย.7 มค 59</a>
+            <li ng-repeat="link in ctrl.documents track by $index">
+              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
             </li>
-            <li>
-              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDU0N1dVZkLVUxWVE/view" target="_blank">แนวทางปฏิบัติตามเกณฑ์จริยธรรมว่าด้วย การจัดซื้อจัดหาและการส่งเสริมการขายยาและเวชภัณฑ์ ของโรงพยาบาลในเครือข่าย UHOSNET</a>
-            </li>
-            <li>
-              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDZ3Y2MzJOMTVxTGc/view" target="_blank">(ตัวอย่าง)ประกาศเกณฑ์จริยธรรมส่งเสริมการขายยา</a>
-            </li>
-            <li>
-              <a href="https://drive.google.com/file/d/0By5NmZH6ZuiDUWJHZVJLUHB5QlE/view" target="_blank">UHOSNET Pharmacy and Therapeutics Committees Checklist</a>
+          </ul>
+        </div>
+        <div flex="90" class="md-color" layout-align="start">
+          <div class="divide-block"></div>
+        </div>
+        <div flex="90" class="md-color" layout-align="start">
+          <p class="md-title">รายงานการประชุม</p>
+        </div>
+        <div flex="90" layout-align="center">
+          <ul class="md-subhead download-list">
+            <li ng-repeat="link in ctrl.reports track by $index">
+              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
             </li>
           </ul>
         </div>

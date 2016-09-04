@@ -1,0 +1,36 @@
+<div layout="column" id="knowledge-healthcare-update">
+    <div flex layout-padding>
+        <div flex-offset="5" flex-offset-sm="0" layout="row" layout-sm="column" layout-xs="column">
+
+            <div hide show-gt-sm layout="column" flex-sm="90" flex-md="20" flex-gt-md="15" class="md-button-scroll">
+                <md-button class="md-raised md-primary" ng-repeat="img in ctrl.images track by $index" ng-click="ctrl.showImage(img.name)">{{img.desc}}</md-button>
+            </div>
+
+            <div hide show-sm layout="row" layout-align="end start">
+
+                <md-menu md-position-mode="target-right target">
+                    <md-button class="small-menu" aria-label="Open Menu" ng-click="$mdOpenMenu($event)">
+                        <i class="material-icons md-color md-36">chrome_reader_mode</i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="img in ctrl.images track by $index">
+                            <md-button ng-click="ctrl.showImage(img.name)"> <span>{{img.desc}}</span>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+
+            </div>
+
+            <div hide show-xs layout="column" flex-offset="5" flex="90">
+                <md-button class="md-raised md-primary" ng-repeat="img in ctrl.images track by $index" ng-click="ctrl.navigate(img.name)">{{img.desc}}</md-button>
+            </div>
+
+            <div flex-offset="5" flex-gt-md="80" flex-md="90" flex-sm="90" hide-xs>
+                <img flex-gt-md="70" flex-md="95" flex-sm="95" ng-src="{{ctrl.image}}" alt="รูปภาพแสดงข้อมูล">
+            </div>
+
+        </div>
+    </div>
+    <div class="divide-block"></div>
+</div>
