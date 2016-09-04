@@ -27,6 +27,12 @@
         templateUrl: '/js/app/templates/knowledge/healthcare/label.html',
         caseInsensitiveMatch: true
       })
+      .when('/knowledge/healthcare/ethic', {
+        controller: 'KnowledgeHealthcareEthicCtrl',
+        controllerAs: 'ctrl',
+        templateUrl: '/js/app/templates/knowledge/healthcare/ethic.html',
+        caseInsensitiveMatch: true
+      })
       .otherwise({
         redirectTo: '/'
       });

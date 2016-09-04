@@ -3,7 +3,7 @@
     <br />
     <div layout="row" flex-offset-gt-md="25" flex-offset-md="10" flex-offset-sm="5" flex-offset-xs="10" flex-gt-md="50" flex-md="80"
       flex-sm="95" flex-xs="70" layout-wrap>
-      <div flex-offset="10" flex-gt-lg="35" flex-lg="40" flex-md="35" flex-sm="35" ng-repeat="med in ctrl.items track by $index" ng-click="ctrl.navigate(med)">
+      <div flex-offset="10" flex-gt-lg="35" flex-lg="40" flex-md="35" flex-sm="35" ng-repeat="med in ctrl.items track by $index" ng-click="ctrl.navigate(med)" class="link">
         <img flex="100" ng-src="{{med.image}}" alt="{{med.name}}">
         <div flex="100" class="image-label">{{med.name}}</div>
         <br />
