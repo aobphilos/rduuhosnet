@@ -21,6 +21,11 @@
       '_',
       'DBFileApi',
       KnowledgeHealthcareLabelCtrl
+    ])
+    .controller('KnowledgeHealthcareEthicCtrl', [
+      '$rootScope',
+      '_',
+      KnowledgeHealthcareEthicCtrl
     ]);
 
   function KnowledgePeopleCtrl($rootScope, $window, _) {
@@ -103,8 +108,8 @@
       {
         name: "Ethics",
         image: "/images/knowledge/healthcare/h2.jpg",
-        link: "",
-        linkType: LINK_TYPE.NONE
+        link: "/knowledge/healthcare/ethic",
+        linkType: LINK_TYPE.PAGE
       },
       {
         name: "Labeling",
@@ -193,6 +198,16 @@
       loadDrugLabel();
     }
 
+  }
+
+  function KnowledgeHealthcareEthicCtrl($rootScope, _) {
+    var vm = this;
+
+    init();
+
+    function init() {
+
+    }
   }
 
 } ());
