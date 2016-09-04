@@ -33,6 +33,12 @@
         templateUrl: '/js/app/templates/knowledge/healthcare/ethic.html',
         caseInsensitiveMatch: true
       })
+      .when('/knowledge/healthcare/update', {
+        controller: 'KnowledgeHealthcareUpdateCtrl',
+        controllerAs: 'ctrl',
+        templateUrl: '/js/app/templates/knowledge/healthcare/update.html',
+        caseInsensitiveMatch: true
+      })
       .otherwise({
         redirectTo: '/'
       });
