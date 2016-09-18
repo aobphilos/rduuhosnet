@@ -1,0 +1,32 @@
+<div layout="column" id="member">
+  <div flex layout-padding>
+    <div layout="row" class="divide-block"></div>
+    <div layout="row" layout-align="center">
+      <div flex="80" flex-xs="100" layout="row" layout-align="center" layout-wrap>
+        <div flex="90" class="md-color" layout-align="start">
+          <p class="md-title">เอกสาร</p>
+        </div>
+        <div flex="90" layout-align="center">
+          <ul class="md-subhead download-list">
+            <li ng-repeat="link in ctrl.documents track by $index">
+              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
+            </li>
+          </ul>
+        </div>
+        <div flex="90" class="md-color" layout-align="start">
+
+        </div>
+        <div flex="90" class="md-color" layout-align="start">
+          <p class="md-title">รายงานการประชุม</p>
+        </div>
+        <div flex="90" layout-align="center">
+          <ul class="md-subhead download-list">
+            <li ng-repeat="link in ctrl.reports track by $index">
+              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

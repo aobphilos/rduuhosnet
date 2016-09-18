@@ -1,0 +1,247 @@
+[
+  {
+    "username": "admin",
+    "password": "panda",
+    "organization": "RDU"
+  },
+  {
+    "username": "CHULAHOS1",
+    "password": "XNQvq5A4sd",
+    "organization": "โรงพยาบาลจุฬาฯ"
+  },
+  {
+    "username": "CHULAHOS2",
+    "password": "G52FapvjYH",
+    "organization": "โรงพยาบาลจุฬาฯ"
+  },
+  {
+    "username": "CHULAHOS3",
+    "password": "D3eA5yprHs",
+    "organization": "โรงพยาบาลจุฬาฯ"
+  },
+  {
+    "username": "RAMATHIBODI1",
+    "password": "DHqq468vdy",
+    "organization": "โรงพยาบาลรามาธิบดี"
+  },
+  {
+    "username": "RAMATHIBODI2",
+    "password": "ZxvPT4q8NX",
+    "organization": "โรงพยาบาลรามาธิบดี"
+  },
+  {
+    "username": "RAMATHIBODI3",
+    "password": "EK9LXM2dse",
+    "organization": "โรงพยาบาลรามาธิบดี"
+  },
+  {
+    "username": "VAJIRA1",
+    "password": "Y7nWeeTU2Y",
+    "organization": "วชิรพยาบาล"
+  },
+  {
+    "username": "VAJIRA2",
+    "password": "B4Xg2ppLPM",
+    "organization": "วชิรพยาบาล"
+  },
+  {
+    "username": "VAJIRA3",
+    "password": "KSUXjUj9vq",
+    "organization": "วชิรพยาบาล"
+  },
+  {
+    "username": "CHILDREN1",
+    "password": "RZV2KcZH8w",
+    "organization": "สถาบันสุขภาพเด็กฯ"
+  },
+  {
+    "username": "CHILDREN2",
+    "password": "KE3cQ5Gvew",
+    "organization": "สถาบันสุขภาพเด็กฯ"
+  },
+  {
+    "username": "CHILDREN3",
+    "password": "Z98rE735sQ",
+    "organization": "สถาบันสุขภาพเด็กฯ"
+  },
+  {
+    "username": "SIRIRAJ1",
+    "password": "AyvMCsH3FD",
+    "organization": "โรงพยาบาลศิริราช"
+  },
+  {
+    "username": "SIRIRAJ2",
+    "password": "AFLtAj9n4L",
+    "organization": "โรงพยาบาลศิริราช"
+  },
+  {
+    "username": "SIRIRAJ3",
+    "password": "JDmj3AC7RE",
+    "organization": "โรงพยาบาลศิริราช"
+  },
+  {
+    "username": "MSMCHOS1",
+    "password": "JyA3NHGCuj",
+    "organization": "มศว."
+  },
+  {
+    "username": "MSMCHOS2",
+    "password": "AbVN9F57ZN",
+    "organization": "มศว."
+  },
+  {
+    "username": "MSMCHOS3",
+    "password": "CuKJ7ydXEV",
+    "organization": "มศว."
+  },
+  {
+    "username": "RAJAVITHI1",
+    "password": "QC4pjMt48g",
+    "organization": "โรงพยาบาลราชวิถี"
+  },
+  {
+    "username": "RAJAVITHI2",
+    "password": "JvBBXZdV25",
+    "organization": "โรงพยาบาลราชวิถี"
+  },
+  {
+    "username": "RAJAVITHI3",
+    "password": "HZGBu4Fy6d",
+    "organization": "โรงพยาบาลราชวิถี"
+  },
+  {
+    "username": "THAMMASAT1",
+    "password": "Se9fd9fFw2",
+    "organization": "โรงพยาบาลธรรมศาสตร์"
+  },
+  {
+    "username": "THAMMASAT2",
+    "password": "GFNfVgcd4h",
+    "organization": "โรงพยาบาลธรรมศาสตร์"
+  },
+  {
+    "username": "THAMMASAT3",
+    "password": "Xn6XBr76gb",
+    "organization": "โรงพยาบาลธรรมศาสตร์"
+  },
+  {
+    "username": "SONGKLA1",
+    "password": "KKPHB98uc5",
+    "organization": "โรงพยาบาลสงขลาฯ"
+  },
+  {
+    "username": "SONGKLA2",
+    "password": "GFJg6qnTLR",
+    "organization": "โรงพยาบาลสงขลาฯ"
+  },
+  {
+    "username": "SONGKLA3",
+    "password": "AFrBGkx2sV",
+    "organization": "โรงพยาบาลสงขลาฯ"
+  },
+  {
+    "username": "PHRAMONGKUT1",
+    "password": "F5kZ8kAskv",
+    "organization": "โรงพยาบาลพระมงกุฎเกล้า"
+  },
+  {
+    "username": "PHRAMONGKUT2",
+    "password": "WwBW4ygCQ8",
+    "organization": "โรงพยาบาลพระมงกุฎเกล้า"
+  },
+  {
+    "username": "PHRAMONGKUT3",
+    "password": "BdG65TFJPr",
+    "organization": "โรงพยาบาลพระมงกุฎเกล้า"
+  },
+  {
+    "username": "BURAPHA1",
+    "password": "DmaVx99bYz",
+    "organization": "โรงพยาบาลม.บูรพา"
+  },
+  {
+    "username": "BURAPHA2",
+    "password": "PP8YRkjft3",
+    "organization": "โรงพยาบาลม.บูรพา"
+  },
+  {
+    "username": "BURAPHA3",
+    "password": "Ttf2seAm2U",
+    "organization": "โรงพยาบาลม.บูรพา"
+  },
+  {
+    "username": "NARESUAN1",
+    "password": "APpB4ZcExX",
+    "organization": "โรงพยาบาลม.นเรศวร"
+  },
+  {
+    "username": "NARESUAN2",
+    "password": "SkhMGW7Hxs",
+    "organization": "โรงพยาบาลม.นเรศวร"
+  },
+  {
+    "username": "NARESUAN3",
+    "password": "HYTQUpF5fE",
+    "organization": "โรงพยาบาลม.นเรศวร"
+  },
+  {
+    "username": "MEDCMU1",
+    "password": "Q6ynU67Ek5",
+    "organization": "โรงพยาบาลมหาราชนครเชียงใหม่"
+  },
+  {
+    "username": "MEDCMU2",
+    "password": "WvahS3j3LK",
+    "organization": "โรงพยาบาลมหาราชนครเชียงใหม่"
+  },
+  {
+    "username": "MEDCMU3",
+    "password": "YEzga7C4aH",
+    "organization": "โรงพยาบาลมหาราชนครเชียงใหม่"
+  },
+  {
+    "username": "BHUMIBOL1",
+    "password": "T4WUaJmdFt",
+    "organization": "โรงพยาบาลภูมิพล"
+  },
+  {
+    "username": "BHUMIBOL2",
+    "password": "Pf536TVfrq",
+    "organization": "โรงพยาบาลภูมิพล"
+  },
+  {
+    "username": "BHUMIBOL3",
+    "password": "RE5zbr65m8",
+    "organization": "โรงพยาบาลภูมิพล"
+  },
+  {
+    "username": "SURANAREE1",
+    "password": "HqqX5rre2b",
+    "organization": "โรงพยาบาลม.เทคโนโลยีสุรนารี"
+  },
+  {
+    "username": "SURANAREE2",
+    "password": "HhU5WH9tEy",
+    "organization": "โรงพยาบาลม.เทคโนโลยีสุรนารี"
+  },
+  {
+    "username": "SURANAREE3",
+    "password": "BSy5m6RseP",
+    "organization": "โรงพยาบาลม.เทคโนโลยีสุรนารี"
+  },
+  {
+    "username": "SRINAGARIND1",
+    "password": "Ah8HBBvVLq",
+    "organization": "โรงพยาบาลศรีนครินทร์"
+  },
+  {
+    "username": "SRINAGARIND2",
+    "password": "S5t5m6AdAy",
+    "organization": "โรงพยาบาลศรีนครินทร์"
+  },
+  {
+    "username": "SRINAGARIND3",
+    "password": "GhSRdT7YZY",
+    "organization": "โรงพยาบาลศรีนครินทร์"
+  }
+]

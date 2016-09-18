@@ -37,12 +37,6 @@
                 templateUrl: '/js/app/templates/aboutus/index.html',
                 caseInsensitiveMatch: true
             })
-            .when('/member', {
-                controller: 'MemberCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: '/js/app/templates/member/index.html',
-                caseInsensitiveMatch: true
-            })
             .when('/contactus', {
                 controller: 'ContactUsCtrl',
                 controllerAs: 'ctrl',
