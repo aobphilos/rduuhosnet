@@ -19,6 +19,8 @@ module.exports.models = {
      ***************************************************************************/
     // connection: 'localDiskDb',
 
+    initDataPath: './api/data/user.json',
+
     /***************************************************************************
      *                                                                          *
      * How and whether Sails will attempt to automatically rebuild the          *

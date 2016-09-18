@@ -2,27 +2,130 @@
     'use strict';
 
     angular
-        .module('rdu.ui')
+        .module('rdu.ui.member')
         .controller('MemberCtrl', [
             '$rootScope',
-            '$window',
-            '$timeout',
+            '$location',
             '_',
             'AuthApi',
             '$mdDialog',
             MemberCtrl
+        ])
+        .controller('MemberDownloadCtrl', [
+            '$rootScope',
+            '$location',
+            '_',
+            'AuthApi',
+            '$mdDialog',
+            MemberDownloadCtrl
+        ])
+        .controller('MemberActivateCtrl', [
+            '$rootScope',
+            '$location',
+            '_',
+            'AuthApi',
+            '$mdDialog',
+            MemberActivateCtrl
         ]);
 
-    function MemberCtrl($rootScope, $window, $timeout, _, AuthApi, $mdDialog) {
+    function MemberCtrl($rootScope, $location, _, AuthApi, $mdDialog) {
         var vm = this;
 
         vm.isAuthenticated = false;
+        vm.isActivated = false;
+        vm.activateKey = "";
+
         vm.username = "";
         vm.password = "";
 
         vm.login = login;
         vm.inputKeyDown = inputKeyDown;
         vm.showAlert = showAlert;
+        vm.sendEmail = sendEmail;
+
+        init();
+
+        function inputKeyDown(e, isValid) {
+            if (e.keyCode === 13) {
+                if (!vm.isAuthenticated)
+                    vm.login(isValid);
+                else
+                    vm.sendEmail(isValid);
+            }
+        }
+
+        function checkAuthen() {
+            return AuthApi.isAuthen(null).$promise
+                .then(function (result) {
+                    vm.isAuthenticated = result.isAuthen;
+                });
+        }
+
+        function login(isValid) {
+
+            if (isValid) {
+                AuthApi.login({ username: vm.username, password: vm.password })
+                    .$promise.then(function (result) {
+                        if (result.user) {
+                            
+                            vm.isAuthenticated = true;
+
+                            if (result.user.isActivated)
+                                $location.path("/member/download");
+                            else
+                                $location.path("/member/activate")
+
+                        } else {
+                            vm.isAuthenticated = false;
+                            vm.showAlert(result.message);
+                        }
+                    });
+            }
+        }
+
+        function sendEmail() {
+            if (isValid) {
+
+            }
+        }
+
+        function showAlert(msg) {
+            alert = $mdDialog.alert()
+                .title('Login Failed')
+                .textContent(msg)
+                .ok('Close');
+            $mdDialog
+                .show(alert)
+                .finally(function () {
+                    alert = undefined;
+                });
+        }
+
+        function init() {
+            checkAuthen().then(function () {
+                if (vm.isAuthenticated)
+                    $location.path("/member/download");
+
+            });
+        }
+
+    }
+
+    function MemberDownloadCtrl($rootScope, $location, _, AuthApi, $mdDialog) {
+        var vm = this;
+
+        vm.isAuthenticated = false;
+        vm.isActivated = false;
+        vm.activateKey = "";
+
+        vm.username = "";
+        vm.password = "";
+
+        vm.login = login;
+        vm.inputKeyDown = inputKeyDown;
+        vm.showAlert = showAlert;
+        vm.sendEmail = sendEmail;
+
 
         vm.documents = [
             {
@@ -81,12 +184,15 @@
 
         function inputKeyDown(e, isValid) {
             if (e.keyCode === 13) {
-                vm.login(isValid);
+                if (!vm.isAuthenticated)
+                    vm.login(isValid);
+                else
+                    vm.sendEmail(isValid);
             }
         }
 
         function checkAuthen() {
-            AuthApi.isAuthen(null).$promise
+            return AuthApi.isAuthen(null).$promise
                 .then(function (result) {
                     vm.isAuthenticated = result.isAuthen;
                 });
@@ -95,16 +201,24 @@
         function login(isValid) {
 
             if (isValid) {
-                AuthApi.login({ username: vm.username, password: vm.password }).$promise
-                    .then(function (result) {
+                AuthApi.login({ username: vm.username, password: vm.password })
+                    .$promise.then(function (result) {
                         if (result.user) {
                             vm.isAuthenticated = true;
+                            vm.isActivated = result.user.isActivated;
+                            vm.activateKey = result.user.activateKey;
                         } else {
                             vm.isAuthenticated = false;
                             vm.showAlert(result.message);
 
                         }
                     });
+            }
+        }
+
+        function sendEmail() {
+            if (isValid) {
+
             }
         }
 
@@ -121,7 +235,96 @@
         }
 
         function init() {
-            checkAuthen();
+            checkAuthen().then(function () {
+                if (!vm.isAuthenticated)
+                    $location.path("/member");
+            });
+        }
+
+    }
+
+    function MemberActivateCtrl($rootScope, $location, _, AuthApi, $mdDialog) {
+        var vm = this;
+
+        vm.isAuthenticated = false;
+        vm.isActivated = false;
+        vm.activateKey = "";
+
+        vm.username = "";
+        vm.password = "";
+
+        vm.login = login;
+        vm.inputKeyDown = inputKeyDown;
+        vm.showAlert = showAlert;
+        vm.sendEmail = sendEmail;
+        vm.cancel = cancel;
+
+        init();
+
+        function inputKeyDown(e, isValid) {
+            if (e.keyCode === 13) {
+                if (!vm.isAuthenticated)
+                    vm.login(isValid);
+                else
+                    vm.sendEmail(isValid);
+            }
+        }
+
+        function checkAuthen() {
+            return AuthApi.isAuthen(null).$promise
+                .then(function (result) {
+                    vm.isAuthenticated = result.isAuthen;
+                });
+        }
+
+        function login(isValid) {
+
+            if (isValid) {
+                AuthApi.login({ username: vm.username, password: vm.password })
+                    .$promise.then(function (result) {
+                        if (result.user) {
+                            vm.isAuthenticated = true;
+                            vm.isActivated = result.user.isActivated;
+                            vm.activateKey = result.user.activateKey;
+                        } else {
+                            vm.isAuthenticated = false;
+                            vm.showAlert(result.message);
+
+                        }
+                    });
+            }
+        }
+
+        function sendEmail() {
+            if (isValid) {
+
+            }
+        }
+
+        function cancel() {
+            AuthApi.logout()
+                .$promise.then(function () {
+                    $location.path("/member");
+                });
+        }
+
+        function showAlert(msg) {
+            alert = $mdDialog.alert()
+                .title('Login Failed')
+                .textContent(msg)
+                .ok('Close');
+            $mdDialog
+                .show(alert)
+                .finally(function () {
+                    alert = undefined;
+                });
+        }
+
+        function init() {
+            checkAuthen().then(function () {
+                if (!vm.isAuthenticated)
+                    $location.path("/member");
+            });
         }
 
     }

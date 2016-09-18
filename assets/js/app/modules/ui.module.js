@@ -3,7 +3,8 @@
 
     angular.module('rdu.ui', [
         'rdu.ui.home',
-        'rdu.ui.knowledge'
+        'rdu.ui.knowledge',
+        'rdu.ui.member'
     ]);
 
 } ());

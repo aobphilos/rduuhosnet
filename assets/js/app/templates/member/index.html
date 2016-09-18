@@ -1,16 +1,13 @@
 <div layout="column" id="member">
   <div flex layout-padding>
-
+    <div layout="row" class="divide-block"></div>
     <div layout="row" layout-align="center">
-
-      <div flex="30" flex-md="40" flex-sm="50" flex-xs="75" ng-if="!ctrl.isAuthenticated">
+      <div flex="30" flex-md="40" flex-sm="50" flex-xs="75">
         <form name="loginForm">
-          <div class="divide-block"></div>
           <md-card>
             <md-card-title layout-align="center">
               <i hide-xs class="material-icons md-color md-48">security</i>
             </md-card-title>
-
             <md-card-content>
               <md-input-container class="md-block">
                 <label>Username</label>
@@ -30,38 +27,11 @@
             <md-card-actions layout="row" layout-align="center">
               <md-button class="md-raised md-primary" ng-click="ctrl.login(!loginForm.$invalid)">Login</md-button>
             </md-card-actions>
+            <div class="divide-block"></div>
           </md-card>
         </form>
         <div id="showToast"></div>
       </div>
-
-      <div flex="80" flex-xs="100" layout="row" layout-align="center" layout-wrap ng-if="ctrl.isAuthenticated">
-        <div flex="90" class="md-color" layout-align="start">
-          <p class="md-title">เอกสาร</p>
-        </div>
-        <div flex="90" layout-align="center">
-          <ul class="md-subhead download-list">
-            <li ng-repeat="link in ctrl.documents track by $index">
-              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
-            </li>
-          </ul>
-        </div>
-        <div flex="90" class="md-color" layout-align="start">
-          <div class="divide-block"></div>
-        </div>
-        <div flex="90" class="md-color" layout-align="start">
-          <p class="md-title">รายงานการประชุม</p>
-        </div>
-        <div flex="90" layout-align="center">
-          <ul class="md-subhead download-list">
-            <li ng-repeat="link in ctrl.reports track by $index">
-              <a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </div>
