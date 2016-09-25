@@ -30,6 +30,37 @@ module.exports = {
     },
 
     isAuthen: function (req, res) {
-        return res.json({ isAuthen: req.isAuthenticated() });
+
+        const isAuthenticated = req.isAuthenticated();
+
+        const result = {
+            isAuthen: isAuthenticated,
+            isActivated: false,
+            activateKey: ""
+        };
+
+        if (req.user) {
+            result.isActivated = req.user.isActivated;
+            result.activateKey = req.user.activateKey;
+        }
+
+        return res.json(result);
+    },
+
+    sendActivation: function (req, res) {
+
+        if (req.isAuthenticated()) {
+
+        }
+
+        return res.json({
+            message: "ok"
+        });
+    },
+
+    confirmActivation: function (req, res) {
+
+        return res.redirect("home/#/member");
+
     }
 };

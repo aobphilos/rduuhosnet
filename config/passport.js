@@ -29,7 +29,9 @@ passport.use(new LocalStrategy({
                 username: user.username,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                createdAt: user.createdAt,
+                organization: user.organization,
+                isActivated: user.isActivated,
+                activateKey: user.activateKey,
                 id: user.id
             };
 
