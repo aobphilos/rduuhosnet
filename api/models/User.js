@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
+var uuid = require("uuid");
+
 module.exports = {
 
     attributes: {
@@ -17,7 +19,17 @@ module.exports = {
         username: { type: 'string' },
         password: { type: 'string' },
         firstName: { type: 'string' },
-        lastName: { type: 'string' }
-
+        lastName: { type: 'string' },
+        organization: { type: 'string' },
+        isActivated: {
+            type: 'boolean',
+            defaultsTo: false
+        },
+        activateKey: {
+            type: 'text',
+            defaultsTo: function () {
+                return uuid.v4();
+            }
+        }
     }
 };

@@ -33,12 +33,15 @@ module.exports.routes = {
      ***************************************************************************/
 
     '/': 'Homecontroller.index',
+    'get /confirmactivation': 'AuthController.confirmActivation',
+    
     'get /api/db/files': 'Homecontroller.getDropboxFiles',
     'get /api/db/drug-label': 'Homecontroller.getDrugLabel',
 
     'post /api/login': 'AuthController.login',
     'get /api/logout': 'AuthController.logout',
-    'get /api/isauthen': 'AuthController.isauthen',
+    'get /api/isauthen': 'AuthController.isAuthen',
+    'post /api/sendactivation': 'AuthController.sendActivation',
     
     /***************************************************************************
      *                                                                          *
