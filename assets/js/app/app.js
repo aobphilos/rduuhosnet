@@ -37,12 +37,6 @@
                 templateUrl: '/js/app/templates/aboutus/index.html',
                 caseInsensitiveMatch: true
             })
-            .when('/member', {
-                controller: 'MemberCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: '/js/app/templates/member/index.html',
-                caseInsensitiveMatch: true
-            })
             .when('/contactus', {
                 controller: 'ContactUsCtrl',
                 controllerAs: 'ctrl',
@@ -71,7 +65,7 @@
 
         if (!$httpProvider.defaults.headers.get) {
             $httpProvider.defaults.headers.common = {};
-        }        
+        }
         $httpProvider.defaults.headers.common["Cache-Control"] = "no-cache";
         // $httpProvider.defaults.headers.common["Pragma"] = "no-cache";
     }
@@ -81,7 +75,9 @@
         $rootScope
     ) {
 
-        var current = { page: {} };
+        var current = {
+            page: {}
+        };
         $rootScope.current = current;
 
 
@@ -97,22 +93,6 @@
                     event.preventDefault();
                 } else {
 
-                    if (path != "/login") {
-
-                        var user = {
-                            isAuthen: true
-                        };
-
-                        if (!user.isAuthen) {
-                            event.preventDefault();
-                            $location.path('/login');
-                        } else {
-
-
-
-                        }
-
-                    }
                 }
             }
 
@@ -142,4 +122,4 @@
 
 
 
-} ());
+}());

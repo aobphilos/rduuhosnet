@@ -1,0 +1,49 @@
+<div layout="column" id="member">
+  <div flex layout-padding>
+    <div layout="row" class="divide-block"></div>
+    <div layout="row" layout-align="center" ng-hide="ctrl.showThankyou">
+      <div flex="30" flex-md="40" flex-sm="50" flex-xs="75">
+        <form name="activateForm">
+          <md-card>
+            <md-card-title layout-align="center">
+              <i hide-xs class="material-icons md-color md-48">security</i>
+            </md-card-title>
+            <md-card-content>
+              <h3>Activate Your Account</h3>
+              <md-input-container class="md-block">
+                <label>Email</label>
+                <input required type="email" name="email" ng-model="ctrl.email" minlength="10" maxlength="50" ng-pattern="/^.+@.+\..+$/"
+                  ng-keydown="ctrl.inputKeyDown($event, !activateForm.$invalid)">
+                <div ng-messages="activateForm.email.$error" role="alert">
+                  <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                    Your email must be between 10 and 50 characters long and look like an e-mail address.
+                  </div>
+                </div>
+              </md-input-container>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+              <md-button class="md-raised md-primary" ng-click="ctrl.sendEmail(!activateForm.$invalid)">Activate</md-button>&nbsp;&nbsp;
+              <md-button class="md-raised md-primary" ng-click="ctrl.cancel()">Cancel</md-button>
+            </md-card-actions>
+            <div class="divide-block"></div>
+          </md-card>
+        </form>
+      </div>
+    </div>
+    <div layout="row" layout-align="center" ng-show="ctrl.showThankyou">
+      <div flex="30" flex-md="40" flex-sm="50" flex-xs="75">
+        <md-card>
+          <md-card-title layout-align="center">
+            <i hide-xs class="material-icons md-color md-48">send</i>
+          </md-card-title>
+          <md-card-content>
+            <div class="center">
+              <h1>Thank You</h1>
+            </div>
+          </md-card-content>
+          <div class="divide-block"></div>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>
