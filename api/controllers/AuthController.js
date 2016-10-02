@@ -51,16 +51,57 @@ module.exports = {
 
         if (req.isAuthenticated()) {
 
-        }
+            MailService
+                .sendActivation(
+                    req.body.email,
+                    req.user.organization,
+                    req.user.username,
+                    req.user.activateKey)
+                .then(() => {
+                    return res.json({
+                        message: "ok"
+                    });
+                })
+                .fail((error) => {
+                    return res.json({
+                        message: error.message
+                    });
+                });
+        } else {
 
-        return res.json({
-            message: "ok"
-        });
+            return res.json({
+                message: "user not authorized"
+            });
+
+        }
     },
 
     confirmActivation: function (req, res) {
 
-        return res.redirect("home/#/member");
+        const user = {
+            username: req.query.user,
+            activateKey: req.query.key
+        };
+
+        if (user.username && user.activateKey) {
+
+            UserService
+                .confirmUser(user)
+                .then((users) => {
+                    req.logIn(users[0], function (err) {
+                        if (err) return res.redirect("/home/#/member");
+                        else return res.redirect("/home/#/member/confirm");
+                    });
+                })
+                .fail((err) => {
+                    return res.redirect("/home/#/member");
+                });
+
+        } else {
+
+            return res.redirect("/home/#/member");
+        }
+
 
     }
 };

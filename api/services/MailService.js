@@ -7,7 +7,9 @@ var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
 module.exports = {
 
-  sendActivation: function (mail_to, activateUrl) {
+  sendActivation: function (mail_to, mail_name, username, activateKey) {
+
+    var deferred = Q.defer();
 
     var config = sails.config.email;
 
@@ -16,12 +18,12 @@ module.exports = {
 
         if (err) {
           console.log('mail error: ', err);
-          return;
+          deferred.reject(err);
         }
 
         var bodyTemplate = _.template(html);
         var bodyData = {
-          url: activateUrl,
+          url: `${config.confirmPath}?user=${username}&key=${activateKey}`,
           icon: config.icon,
           homePage: config.homePage
         };
@@ -29,7 +31,8 @@ module.exports = {
         var body = bodyTemplate(bodyData);
 
         var from_email = new helper.Email(config.from, config.fromName);
-        var to_email = new helper.Email(mail_to);
+        var to_email = new helper.Email(mail_to,
+          mail_name ? mail_name : "Guest");
         var subject = config.subject;
         var content = new helper.Content('text/html', body);
         var mail = new helper.Mail(from_email, subject, to_email, content);
@@ -41,13 +44,13 @@ module.exports = {
         });
 
         sg.API(request, function (error, response) {
-          console.log(response.statusCode);
-          console.log(response.body);
-          console.log(response.headers);
+          if (error) deferred.reject(error);
+          else deferred.resolve(response.statusCode)
         });
 
       });
+
+    return deferred.promise;
   }
+
 }
-
-
