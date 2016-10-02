@@ -26,6 +26,14 @@
             'AuthApi',
             '$mdDialog',
             MemberActivateCtrl
+        ])
+        .controller('MemberConfirmCtrl', [
+            '$rootScope',
+            '$location',
+            '_',
+            'AuthApi',
+            '$mdDialog',
+            MemberConfirmCtrl
         ]);
 
     function MemberCtrl($rootScope, $location, _, AuthApi, $mdDialog) {
@@ -72,7 +80,7 @@
                             if (result.user.isActivated)
                                 $location.path("/member/download");
                             else
-                                $location.path("/member/activate")
+                                $location.path("/member/activate");
 
                         } else {
                             vm.isAuthenticated = false;
@@ -244,6 +252,42 @@
                         $location.path("/member/download");
                 }
             });
+        }
+
+    }
+
+    function MemberConfirmCtrl($rootScope, $location, _, AuthApi, $mdDialog) {
+        var vm = this;
+
+        vm.isAuthenticated = false;
+        vm.isActivated = false;
+
+        vm.next = next;
+
+        init();
+
+        function checkAuthen() {
+            return AuthApi.isAuthen(null)
+                .$promise.then(function (result) {
+                    vm.isAuthenticated = result.isAuthen;
+                    vm.isActivated = result.isActivated;
+                });
+        }
+
+        function next() {
+            $location.path("/member/download");
+        }
+
+        function init() {
+            console.log('in confirm actions');
+            // checkAuthen().then(function () {
+            //     if (!vm.isAuthenticated)
+            //         $location.path("/member");
+            //     else {
+            //         if (!vm.isActivated)
+            //             $location.path("/member/activate");
+            //     }
+            // });
         }
 
     }
